@@ -8,4 +8,6 @@ package se.liu.ida.crito803_gusbr058.tddc69.kungen;
  * To change this template use File | Settings | File Templates.
  */
 public class CardFactory {
+    //Factory! Denna är coolt!
+    //public static GraphicC
 }

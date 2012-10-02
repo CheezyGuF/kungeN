@@ -8,13 +8,29 @@ package se.liu.ida.crito803_gusbr058.tddc69.kungen;
  * To change this template use File | Settings | File Templates.
  */
 public class FreeHolder implements StackHolder {
+/*
+    private boolean stackable; Nej
+    private boolean alternatingColor; Behövs inte
+    private boolean increasingOrder; Behövs inte
+    private boolean movable; Ja
+
+    }*/
+
     @Override
-    public boolean addStack(CardStack newStack) {
-        return false;  //To change body of implemented methods use File | Settings | File Templates.
+    public boolean addStack(CardStack otherStack) {
+        if(stack.size() == 1 || otherStack.size() > 1) return false;
+        stack.addStack(otherStack);
+        return true;
+        }
+
+    @Override
+    public CardStack getStack(int amount) {
+        return stack.getStack(1);
     }
 
     @Override
-    public CardStack removeStack(int start, int stop) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    public boolean isEmpty() {
+        return stack.isEmpty();
     }
+
 }

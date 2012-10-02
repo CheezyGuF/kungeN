@@ -19,21 +19,4 @@ public class GameCard {
         this.number = number;
         this.color = color;
     }
-
-    public static LinkedList<GameCard> createCardDeck(){
-        LinkedList<GameCard> result = new LinkedList<GameCard>();
-
-        for (CardColor color : CardColor.values()) {
-            for (CardNumber number : CardNumber.values()) {
-                result.add(new GameCard(number, color));
-            }
-        }
-        return result;
-    }
-
-    public static LinkedList<GameCard> createShuffledDeck(){
-        LinkedList<GameCard> result = createCardDeck();
-        Collections.shuffle(result);
-        return result;
-    }
 }

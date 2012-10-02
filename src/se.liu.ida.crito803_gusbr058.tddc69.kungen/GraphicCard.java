@@ -16,4 +16,5 @@ public class GraphicCard extends JLabel {
     public GraphicCard(GameCard card) {
         this.card = card;
     }
+
 }

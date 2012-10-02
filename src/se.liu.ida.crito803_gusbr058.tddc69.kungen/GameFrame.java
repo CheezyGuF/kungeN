@@ -12,48 +12,20 @@ import java.awt.*;
  */
 public class GameFrame extends JFrame {
 
-
-
-    public JPanel finalPanel = new JPanel();
-    public JPanel freePanel = new JPanel();
-    public JPanel gamePanel = new JPanel();
-
-    public JTextArea testArea = new JTextArea();
-
-
-    JLabel hejsan(){
-        return new JLabel("HEJSAN!!!!11! :)");
-    }
+    //ändra public -> private senare?
+    public GamePanel panel;
+    public FreeCell game;
 
     public GameFrame() throws HeadlessException {
         super("Freecell");
-
-        freePanel.setLayout(new GridLayout(1, 4, 10, 10));
-        finalPanel.setLayout(new GridLayout(1, 4, 10, 10));
-        gamePanel.setLayout(new GridLayout(1, 8, 10, 10));
-
-        freePanel.setBackground(Color.GREEN);
-        finalPanel.setBackground(Color.RED);
-        gamePanel.setBackground(Color.YELLOW);
-
-        freePanel.add(hejsan());
-        finalPanel.add(hejsan());
-        gamePanel.add(testArea);
-        gamePanel.setPreferredSize(new Dimension(getWidth(), 850));
-
-        JPanel northPanel = new JPanel(new GridLayout(1,2));
-        northPanel.setPreferredSize(new Dimension(getWidth(), 200));
-        northPanel.add(freePanel);
-        northPanel.add(finalPanel);
-
         this.setLayout(new BorderLayout());
 
-        add(northPanel, BorderLayout.NORTH);
+        game = new FreeCell();
+        panel = new GamePanel(game);
 
-        add(gamePanel, BorderLayout.CENTER);
+        add(panel, BorderLayout.CENTER);
 
         this.setSize(1680, 1050);
-
         //this.pack();
         this.setVisible(true);
     }

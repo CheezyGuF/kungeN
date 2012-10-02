@@ -1,6 +1,7 @@
 package se.liu.ida.crito803_gusbr058.tddc69.kungen;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,52 +12,73 @@ import java.util.ArrayList;
  */
 public class CardStack {
 
-    private ArrayList<GameCard> list;
-    private int limit;
+    //Public tills vidare.
+    //ArrayList -> List vid compile error?
+    public ArrayList<GameCard> list = new ArrayList<GameCard>();
 
-    public CardStack(int limit) {
-        this.limit = limit;
-    }
-    public CardStack(){
-        this.limit = -1;
-        //Inte har placeringsreglerna!
-    }
-
-    public boolean isStraight(int targetIndex){
-        return true;
-    }
-
-    public boolean addCard(GameCard card){
-        if(limit == -1 || list.size() < limit){
-            list.add(card);
-            return true;
+    public boolean isStraight(int amount){
+        if(amount == 1) return true;
+        int index = list.size() - 1;
+        GameCard prev = list.get(index--);
+        for (int i = 1; i < amount; i++) {
+            GameCard curr = list.get(index--);
+            //använd equals istället för !=  ?
+            if(curr.color.getSuperColor() == prev.color.getSuperColor() ||
+               curr.number.ordinal() != prev.number.ordinal() + 1){
+                return false;
+            }
+            prev = curr;
         }
-        return false;
-    }
-
-    public boolean removeCard(GameCard card) {
         return true;
     }
 
-    public CardStack removeStack(){
-        return null;
+    public CardStack getStack(int amount){
+        CardStack result = new CardStack();
+        result.list = (ArrayList<GameCard>) list.subList(size() - amount, size() - 1);
+        return result;
+    }
+
+    public static void removeStack(CardStack subStack){
+        subStack.list.clear();
     }
 
     public int size(){
         return list.size();
     }
 
-    //public CardStack
-
-    public boolean addStack(CardStack stack){
-        if(limit == -1 || list.size() + stack.size() <= limit){
-          //  list.add(stack.);
-            return true;
-        }
-        return false;
+    public void addStack(CardStack otherStack){
+        list.addAll(otherStack.list);
     }
 
+    public static CardStack createCardDeck(){
+        ArrayList<GameCard> list = new ArrayList<GameCard>();
+
+        for (CardColor color : CardColor.values()) {
+            for (CardNumber number : CardNumber.values()) {
+                list.add(new GameCard(number, color));
+            }
+        }
+        CardStack result = new CardStack();
+        result.list = list;
+        return result;
+    }
+    public static CardStack createShuffledDeck(){
+        CardStack result = createCardDeck();
+        Collections.shuffle(result.list);
+        return result;
+    }
+    public boolean isEmpty() {
+        return list.isEmpty();
+    }
+
+
+    public GameCard peekLast() {
+        if(list.size() == 0) return null;
+        return list.get(list.size()-1);
+    }
+
+    public GameCard peekFirst() {
+        if(list.size() == 0) return null;
+        return list.get(0);
+    }
 }
-
-
-//Regelmetoder för stegar!
