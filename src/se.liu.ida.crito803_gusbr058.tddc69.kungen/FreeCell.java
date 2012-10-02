@@ -37,9 +37,20 @@ public class FreeCell {
 
         if(origin instanceof GameHolder && target instanceof GameHolder){
             int length = movingStack.list.size();
-            int free = freeHolders();
+            int freeCells = freeCells();
+            int freeColumns = freeColumns();
 
-            
+            if(target.isEmpty()){
+              freeColumns--;
+            }
+
+            //(fC + 1) * 2^Cols är funktionen för att räkna ut antalet tillåtna kort att flytta.
+            //biggestStack är antalet kort som kan flyttas i en rörelse.
+            int biggestStack = (freeCells + 1) * (int) Math.pow(2, freeColumns);
+
+            if(length > biggestStack){
+                return false;
+            }
         }
 
         if(target.addStack(movingStack)){
@@ -49,11 +60,17 @@ public class FreeCell {
             return false;
         }
     }
-    public int freeHolders(){
+
+    public int freeCells(){
         int result = 0;
         for (int i = 0; i < freeHolders.length; i++) {
             if(freeHolders[i].isEmpty()) result++;
         }
+        return result;
+    }
+
+    public int freeColumns(){
+        int result = 0;
         for (int i = 0; i < gameHolders.length; i++) {
             if(gameHolders[i].isEmpty()) result++;
         }
