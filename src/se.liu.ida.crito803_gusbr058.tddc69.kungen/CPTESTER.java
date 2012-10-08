@@ -10,7 +10,7 @@ public class CPTESTER {
 
         for (int i = 1; i <= 10; i++) list1.add(i);
 
-        List<Integer> sub =  list1.subList(3, 5);
+        List<Integer> sub =  list1.subList(0, 1);
 
         list2.addAll(sub);
 

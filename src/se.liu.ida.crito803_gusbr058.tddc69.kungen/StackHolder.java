@@ -1,5 +1,7 @@
 package se.liu.ida.crito803_gusbr058.tddc69.kungen;
 
+import java.util.Iterator;
+
 /**
  * Created with IntelliJ IDEA.
  * User: crito803
@@ -7,13 +9,19 @@ package se.liu.ida.crito803_gusbr058.tddc69.kungen;
  * Time: 19:08
  * To change this template use File | Settings | File Templates.
  */
-public interface StackHolder {
+public abstract class StackHolder {
 
     CardStack stack = new CardStack();
 
-    public boolean addStack(CardStack newStack);
+    public abstract boolean addStack(CardStack newStack);
 
-    public CardStack getStack(int amount);
+    public abstract CardStack getStack(int amount);
 
-    public boolean isEmpty();
+    public boolean isEmpty(){
+        return stack.isEmpty();
+    }
+
+    public Iterator iterator(){
+        return stack.iterator();
+    }
 }

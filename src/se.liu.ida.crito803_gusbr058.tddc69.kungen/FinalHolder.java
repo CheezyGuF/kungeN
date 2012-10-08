@@ -1,5 +1,7 @@
 package se.liu.ida.crito803_gusbr058.tddc69.kungen;
 
+import java.util.Iterator;
+
 /**
  * Created with IntelliJ IDEA.
  * User: crito803
@@ -7,7 +9,7 @@ package se.liu.ida.crito803_gusbr058.tddc69.kungen;
  * Time: 19:56
  * To change this template use File | Settings | File Templates.
  */
-public class FinalHolder implements StackHolder {
+public class FinalHolder extends StackHolder {
     /*
     private boolean stackable; Ja
     private boolean alternatingColor; Nej
@@ -42,8 +44,5 @@ public class FinalHolder implements StackHolder {
         return null;
     }
 
-    @Override
-    public boolean isEmpty() {
-        return stack.isEmpty();
-    }
+
 }

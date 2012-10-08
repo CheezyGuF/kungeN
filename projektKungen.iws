@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9b25359-2761-46c4-af51-ac7e9e987c62" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FreeCell.java" afterPath="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FreeCell.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projektKungen.iws" afterPath="$PROJECT_DIR$/projektKungen.iws" />
     </list>
     <ignored path="projektKungen.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,6 +25,21 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FreeCell.java" line="36" class="se.liu.ida.crito803_gusbr058.tddc69.kungen.FreeCell" package="se.liu.ida.crito803_gusbr058.tddc69.kungen">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -65,28 +80,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FreeCell.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="StackHolder.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/StackHolder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="32" selection-start="560" selection-end="560" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GamePanel.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GamePanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="54" column="34" selection-start="1739" selection-end="1739" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FreeCell.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FreeCell.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="0" selection-start="904" selection-end="904" vertical-scroll-proportion="0.7012302">
+            <state line="39" column="5" selection-start="1174" selection-end="1174" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CPTESTER.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/CPTESTER.java">
+      <file leaf-file-name="GameHolder.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameHolder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="49" selection-start="905" selection-end="905" vertical-scroll-proportion="0.0">
+            <state line="11" column="31" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FinalHolder.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FinalHolder.java">
+      <file leaf-file-name="GameFrame.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="31" selection-start="1350" selection-end="1350" vertical-scroll-proportion="0.0">
+            <state line="83" column="1" selection-start="2821" selection-end="2821" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -95,9 +128,30 @@
       <file leaf-file-name="CardStack.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/CardStack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="27" selection-start="1326" selection-end="1326" vertical-scroll-proportion="0.0">
+            <state line="42" column="55" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameTester.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameTester.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="0" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GraphicFactory.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GraphicFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="0" selection-start="1279" selection-end="1279" vertical-scroll-proportion="0.5160142">
               <folding>
-                <element signature="e#416#426#0" expanded="true" />
+                <element signature="method#mousePressed#0;class#1186:1867" expanded="false" />
+                <element signature="method#mouseReleased#0;class#1186:1867" expanded="false" />
+                <element signature="method#mouseEntered#0;class#1186:1867" expanded="false" />
+                <element signature="method#mouseExited#0;class#1186:1867" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -116,30 +170,45 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/CardColor.java" />
         <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameCardTester.java" />
         <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/readme" />
-        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameFrame.java" />
-        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameTester.java" />
-        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GamePanel.java" />
         <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameCard.java" />
         <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GraphicCard.java" />
         <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/CardFactory.java" />
+        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameTester.java" />
         <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/CPTESTER.java" />
         <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/CardStack.java" />
-        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/StackHolder.java" />
-        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FinalHolder.java" />
-        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FreeHolder.java" />
-        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameHolder.java" />
+        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameFrame.java" />
         <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FreeCell.java" />
+        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/StackHolder.java" />
+        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameHolder.java" />
+        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FreeHolder.java" />
+        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FinalHolder.java" />
+        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GamePanel.java" />
+        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GraphicFactory.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="840" />
-    <option name="y" value="3" />
-    <option name="width" value="1082" />
-    <option name="height" value="1039" />
+    <option name="x" value="-6" />
+    <option name="width" value="1692" />
+    <option name="height" value="1022" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Abstraction issues</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -169,16 +238,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="projektKungen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Problems">
           <PATH>
@@ -188,7 +247,14 @@
             </PATH_ELEMENT>
           </PATH>
         </subPane>
-        <subPane subId="Project Files" />
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
         <subPane subId="All">
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
@@ -226,6 +292,16 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="projektKungen" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -234,7 +310,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="project.propVCSSupport.VCSs.Git" />
+    <property name="options.lastSelected" value="Errors" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -247,7 +323,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="Application.CPTESTER">
+  <component name="RunManager" selected="Application.GameTester">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -381,7 +457,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="projektKungen" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -398,7 +480,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="projektKungen" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -412,6 +500,11 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SliceManager">
+    <option name="analysisUIOptions">
+      <AnalysisUIOptions />
+    </option>
+  </component>
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="true">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
@@ -441,33 +534,33 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="840" y="3" width="1082" height="1039" extended-state="0" />
+    <frame x="-6" y="0" width="1692" height="1022" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="631" y="190" width="803" height="853" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32807216" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.49785408" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264368" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32528734" sideWeight="0.49785408" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32908913" sideWeight="0.67192787" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32863274" sideWeight="0.67356324" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873562" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39974457" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19686581" sideWeight="0.67192787" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32534248" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="613" y="118" width="803" height="853" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19546568" sideWeight="0.6758621" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32413793" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990867" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -565,91 +658,90 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/CardColor.java">
+    <entry file="jar:///usr/jdk/jdk1.7.0_07/src.zip!/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="38" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0" />
+        <state line="598" column="12" selection-start="27149" selection-end="27149" vertical-scroll-proportion="0.7124736" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/readme">
+    <entry file="jar:///usr/jdk/jdk1.7.0_07/src.zip!/java/awt/Component.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="39" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0" />
+        <state line="187" column="22" selection-start="6415" selection-end="6415" vertical-scroll-proportion="0.33271375" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GraphicCard.java">
+    <entry file="jar:///usr/jdk/jdk1.7.0_07/src.zip!/java/awt/Container.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="1" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0" />
+        <state line="90" column="39" selection-start="2133" selection-end="2133" vertical-scroll-proportion="0.31964287" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameCard.java">
+    <entry file="jar:///usr/jdk/jdk1.7.0_07/src.zip!/javax/swing/JComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0" />
+        <state line="182" column="46" selection-start="6532" selection-end="6532" vertical-scroll-proportion="0.3199269" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GamePanel.java">
+    <entry file="jar:///usr/jdk/jdk1.7.0_07/src.zip!/javax/swing/JPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="34" selection-start="1931" selection-end="1931" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar:///usr/jdk/instances/jdk1.7.0/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="300" column="18" selection-start="10844" selection-end="10844" vertical-scroll-proportion="0.33292383" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/CardFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="6" selection-start="274" selection-end="274" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameTester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="34" selection-start="573" selection-end="573" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FreeHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="31" selection-start="819" selection-end="819" vertical-scroll-proportion="0.6407538" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/StackHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="18" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="9" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/CardStack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="27" selection-start="1326" selection-end="1326" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#416#426#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="64" column="33" selection-start="1510" selection-end="1510" vertical-scroll-proportion="0.4107143" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/CPTESTER.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="49" selection-start="905" selection-end="905" vertical-scroll-proportion="0.0" />
+        <state line="12" column="44" selection-start="394" selection-end="394" vertical-scroll-proportion="0.031598512" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FreeHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="30" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FinalHolder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="31" selection-start="1350" selection-end="1350" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="11" column="33" selection-start="271" selection-end="271" vertical-scroll-proportion="-0.031598512" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/StackHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="32" selection-start="560" selection-end="560" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GamePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="34" selection-start="1739" selection-end="1739" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FreeCell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="904" selection-end="904" vertical-scroll-proportion="0.7012302">
-          <folding />
+        <state line="39" column="5" selection-start="1174" selection-end="1174" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="31" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="1" selection-start="2821" selection-end="2821" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/CardStack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="55" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GraphicFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="0" selection-start="1279" selection-end="1279" vertical-scroll-proportion="0.5160142">
+          <folding>
+            <element signature="method#mousePressed#0;class#1186:1867" expanded="false" />
+            <element signature="method#mouseReleased#0;class#1186:1867" expanded="false" />
+            <element signature="method#mouseEntered#0;class#1186:1867" expanded="false" />
+            <element signature="method#mouseExited#0;class#1186:1867" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

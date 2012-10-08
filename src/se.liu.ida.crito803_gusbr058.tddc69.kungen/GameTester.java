@@ -11,6 +11,9 @@ import java.util.LinkedList;
  */
 public class GameTester {
     public static void main(String[] args) {
+        GameFrame frame = new GameFrame();
+        if(1==1) return;
+
         CardStack list = CardStack.createShuffledDeck();
 
 

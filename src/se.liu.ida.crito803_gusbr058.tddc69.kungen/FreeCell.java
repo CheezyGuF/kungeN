@@ -1,5 +1,7 @@
 package se.liu.ida.crito803_gusbr058.tddc69.kungen;
 
+import java.util.Iterator;
+
 /**
  * Created with IntelliJ IDEA.
  * User: crito803
@@ -8,22 +10,31 @@ package se.liu.ida.crito803_gusbr058.tddc69.kungen;
  * To change this template use File | Settings | File Templates.
  */
 public class FreeCell {
-    FreeHolder[] freeHolders = new FreeHolder[4];
-    FinalHolder[] finalHolders = new FinalHolder[4];
-    GameHolder[] gameHolders = new GameHolder[8];
+    FreeHolder[] freeHolders;
+    FinalHolder[] finalHolders;
+    GameHolder[] gameHolders;
 
-    CardStack gameDeck = CardStack.createShuffledDeck();
+    CardStack gameDeck;
 
     //själva spelet
 
     public FreeCell() {
+        freeHolders = new FreeHolder[4];
+        finalHolders = new FinalHolder[4];
+        gameHolders = new GameHolder[8];
+        for (int i = 0; i < freeHolders.length; i++) freeHolders[i] = new FreeHolder();
+        for (int i = 0; i < finalHolders.length; i++) finalHolders[i] = new FinalHolder();
+        for (int i = 0; i < gameHolders.length; i++) gameHolders[i] = new GameHolder();
+        gameDeck = CardStack.createShuffledDeck();
         placeCards();
     }
 
     private void placeCards(){
         int counter = 0;
-        while(!gameDeck.isEmpty()){
-            gameHolders[counter].addStack(gameDeck.getStack(1));
+        CardStack temp;
+        Iterator<GameCard> iter = gameDeck.iterator();
+        while(iter.hasNext()){
+            gameHolders[counter].addCard(iter.next());
             counter = (counter + 1) % 8;
         }
     }

@@ -1,5 +1,7 @@
 package se.liu.ida.crito803_gusbr058.tddc69.kungen;
 
+import java.util.Iterator;
+
 /**
  * Created with IntelliJ IDEA.
  * User: crito803
@@ -7,23 +9,31 @@ package se.liu.ida.crito803_gusbr058.tddc69.kungen;
  * Time: 19:57
  * To change this template use File | Settings | File Templates.
  */
-public class GameHolder implements StackHolder {
+public class GameHolder extends StackHolder {
 
      @Override
     public boolean addStack(CardStack otherStack) {
-        if(this.stack.isEmpty()){
-            addStack(otherStack);
+        if(stack.isEmpty()){
+            stack.addStack(otherStack);
             return true;
         }else{
             GameCard last = stack.peekLast();
             GameCard first = otherStack.peekFirst();
             if(last.color.getSuperColor() != first.color.getSuperColor() &&
                last.number.ordinal() == first.number.ordinal() + 1){
-                addStack(otherStack);
+                stack.addStack(otherStack);
                 return true;
             }
             return false;
         }
+    }
+
+    public void addStackNoRules(CardStack otherStack){
+        this.stack.addStack(otherStack);
+    }
+
+    public void addCard(GameCard card){
+        stack.list.add(card);
     }
 
     @Override
@@ -36,8 +46,5 @@ public class GameHolder implements StackHolder {
         }
     }
 
-    @Override
-    public boolean isEmpty() {
-        return stack.isEmpty();
-    }
+
 }

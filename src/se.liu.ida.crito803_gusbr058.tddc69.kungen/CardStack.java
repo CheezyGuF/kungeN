@@ -2,6 +2,8 @@ package se.liu.ida.crito803_gusbr058.tddc69.kungen;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,7 +16,7 @@ public class CardStack {
 
     //Public tills vidare.
     //ArrayList -> List vid compile error?
-    public ArrayList<GameCard> list = new ArrayList<GameCard>();
+    public List<GameCard> list = new ArrayList<GameCard>();
 
     public boolean isStraight(int amount){
         if(amount == 1) return true;
@@ -34,12 +36,16 @@ public class CardStack {
 
     public CardStack getStack(int amount){
         CardStack result = new CardStack();
-        result.list = (ArrayList<GameCard>) list.subList(size() - amount, size() - 1);
+        result.list = list.subList(size() - amount, size());
         return result;
     }
 
     public static void removeStack(CardStack subStack){
         subStack.list.clear();
+    }
+
+    public void clear(){
+        list.clear();
     }
 
     public int size(){
@@ -80,5 +86,9 @@ public class CardStack {
     public GameCard peekFirst() {
         if(list.size() == 0) return null;
         return list.get(0);
+    }
+
+    public Iterator iterator(){
+        return list.iterator();
     }
 }
