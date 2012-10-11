@@ -1,5 +1,6 @@
 package se.liu.ida.crito803_gusbr058.tddc69.kungen;
 
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,17 +19,19 @@ public class FreeCell {
 
     CardStack gameDeck;
 
-    //själva spelet
+    Collection<GameCompletedListener> completedListeners;
 
+    //själva spelet
     public FreeCell() {
+        completedListeners = new LinkedList<GameCompletedListener>();
         freeHolders = new FreeHolder[4];
         finalHolders = new FinalHolder[4];
         gameHolders = new GameHolder[8];
         for (int i = 0; i < freeHolders.length; i++) freeHolders[i] = new FreeHolder();
         for (int i = 0; i < finalHolders.length; i++) finalHolders[i] = new FinalHolder();
         for (int i = 0; i < gameHolders.length; i++) gameHolders[i] = new GameHolder();
-        gameDeck = CardStack.createShuffledDeck();
-        placeCards();
+        gameDeck = CardStack.createCardDeck();
+        newGame();
     }
 
     private void placeCards(){
@@ -40,13 +43,28 @@ public class FreeCell {
             temp = new CardStack();
             curr = iter.next();
             temp.list.add(curr);
-            System.out.print(curr.toBeautifulString() + "\t");
+            //System.out.print(curr.toBeautifulString() + "\t");
             gameHolders[counter].addStackNoRules(temp);
-            if(counter >= 7){
-                System.out.println();
-            }
+            //if(counter >= 7){
+            //    System.out.println();
+            //}
             counter = (counter + 1) % 8;
         }
+    }
+
+    public void checkIfCompleted(){
+        if(!allEmpty()) return;
+        notifyGameCompletedListeners();
+    }
+
+    private boolean allEmpty(){
+        for (StackHolder stackHolder : gameHolders) {
+            if(!stackHolder.isEmpty()) return false;
+        }
+        for (StackHolder stackHolder : freeHolders) {
+            if(!stackHolder.isEmpty()) return false;
+        }
+        return true;
     }
 
     public boolean move(int amount, StackHolder origin, StackHolder target){
@@ -79,10 +97,37 @@ public class FreeCell {
             //movingStack.clear();
             origin.notifyListeners();
             target.notifyListeners();
+            if(target instanceof FinalHolder) checkIfCompleted();
             return true;
         }else{
             return false;
         }
+    }
+
+    public void newGame(){
+        clearStacks();
+        gameDeck.shuffle();
+        placeCards();
+    }
+
+    public void restartGame(){
+        clearStacks();
+        placeCards();
+    }
+
+    private void clearStacks(){
+        for (StackHolder stackHolder : gameHolders) {
+            stackHolder.clear();
+        }
+
+        for (StackHolder stackHolder : freeHolders) {
+            stackHolder.clear();
+        }
+
+        for (StackHolder stackHolder : finalHolders) {
+            stackHolder.clear();
+        }
+
     }
 
     public int freeCells(){
@@ -99,5 +144,21 @@ public class FreeCell {
             if(gameHolders[i].isEmpty()) result++;
         }
         return result;
+    }
+
+    public StackHolder findCard(GameCard card){
+        for (StackHolder gameH : gameHolders) if(gameH.stack.list.contains(card)) return gameH;
+        for (StackHolder finalH : finalHolders) if(finalH.stack.list.contains(card)) return finalH;
+        for (StackHolder freeH : freeHolders) if(freeH.stack.list.contains(card)) return freeH;
+        return null;
+    }
+
+    private void notifyGameCompletedListeners() {
+        for (GameCompletedListener listener : completedListeners) {
+            listener.gameCompleted();
+        }
+    }
+    public void registerGameCompletedListener(GameCompletedListener listener){
+        completedListeners.add(listener);
     }
 }

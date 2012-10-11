@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.util.*;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,125 +17,143 @@ import java.awt.event.MouseMotionListener;
  */
 public class GraphicFactory {
 
-   //Factory! Denna är coolt!
-    public static JLabel toGraphicCard(final GameCard gameCard){// final Controller controller){
-        final JLabel result = new JLabel(gameCard.number + " of " + gameCard.color);
-        result.setBackground(Color.WHITE);
-        result.setForeground(gameCard.color.getSuperColor()==CardColor.superColor.Red? Color.RED:Color.BLACK);
+    public static JPanel toGraphicHolder(StackHolder stackHolder, HashMap<GameCard, Component> cards, Controller controller){
+        return new GraphicHolder(stackHolder, cards, controller);
+    }
 
-        result.setOpaque(true);
-        result.setFocusable(true);
+    public static JLabel toGraphicCard(GameCard gameCard, Controller controller){
+        return new GraphicCard(gameCard, controller);
+    }
 
 
-        result.addMouseMotionListener(new MouseMotionListener() {
-            @Override
-            public void mouseDragged(MouseEvent e) {
-            }
+    //Factory! Denna är coolt!
+    public static class GraphicCard extends JLabel {
+        boolean marked = false;
 
-            @Override
-            public void mouseMoved(MouseEvent e) {
-                //To change body of implemented methods use File | Settings | File Templates.
-            }
-        });
+        public GraphicCard(final GameCard gameCard, final Controller controller) {
+            super(gameCard.number + " of " + gameCard.color);
+            setBackground(Color.WHITE);
+            setForeground(gameCard.color.getSuperColor() == CardColor.superColor.Red ? Color.RED : Color.BLACK);
 
-        result.addMouseListener(new MouseListener() {
-            boolean marked = false;
+            setOpaque(true);
+            setFocusable(true);
 
-        @Override
-            public void mouseClicked(MouseEvent e) {
-                //controller.setFrom(gameCard);
-                if(e.getButton() == MouseEvent.BUTTON1) System.out.println("hejsan, mouse 1 klickad!");
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-                if(marked){
-                    result.setBackground(new Color(0,167,0));
-                    marked = false;
-                }else{
-                    if(e.getButton() == MouseEvent.BUTTON1){
-                        result.setBackground(Color.ORANGE);
-                    }else{
-                        result.setBackground(Color.YELLOW);
-                    }
-
-                    marked = true;
+            addMouseListener(new MouseListener() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    controller.setFrom(gameCard);
+                    System.out.println(controller.getAmount() + " cards from " + controller.getOrigin().toString());
                 }
-            }
 
-            @Override
-            public void mouseReleased(MouseEvent e) {
-            }
+                @Override
+                public void mousePressed(MouseEvent e) {
+                    if (marked) {
+                        setBackground(new Color(0, 167, 0));
+                        marked = false;
+                    } else {
+                        if (e.getButton() == MouseEvent.BUTTON1) {
+                            setBackground(Color.ORANGE);
+                        } else {
+                            setBackground(Color.YELLOW);
+                        }
 
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                if(!marked) result.setBackground(new Color(0,167,0));
-            }
+                        marked = true;
+                    }
+                }
 
-            @Override
-            public void mouseExited(MouseEvent e) {
-                if(!marked) result.setBackground(Color.WHITE);
-            }
-        });
-        return result;
+                @Override
+                public void mouseReleased(MouseEvent e) {
+                }
+
+                @Override
+                public void mouseEntered(MouseEvent e) {
+                    if (!marked) setBackground(new Color(0, 167, 0));
+                }
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    if (!marked) setBackground(Color.WHITE);
+                }
+            });
+        }
+
     }
 
-    public static JPanel toGraphicHolder(StackHolder stackHolder){
-        return new GraphicHolder(stackHolder);
-    }
-
-
-
-
-
-
-
-
-    private static class GraphicHolder extends JPanel implements GraphicStackListener, MouseListener {
+    //Ny klass
+    private static class GraphicHolder extends JPanel implements GraphicStackListener{
         StackHolder stackHolder;
+        HashMap<GameCard, Component> cards;
+        Controller controller;
 
-        public GraphicHolder(StackHolder stackHolder) {
+        public GraphicHolder(final StackHolder stackHolder, HashMap<GameCard, Component> cards, final Controller controller) {
             super();
+            this.controller = controller;
+            this.cards = cards;
             this.stackHolder = stackHolder;
             if(stackHolder instanceof GameHolder){
                 setLayout(new GridLayout(20,1));
             }else{
-                setLayout(new GridLayout(1, 1));
+                setLayout(new BorderLayout(10, 10));
             }
             setBackground(new Color(0,167,0));
             stackHolder.addListener(this);
+            addMouseListener(new MouseListener() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    controller.setTarget(stackHolder);
+
+                    System.out.println("target: " + controller.getTarget());
+                }
+
+                @Override
+                public void mousePressed(MouseEvent e) {
+                    //To change body of implemented methods use File | Settings | File Templates.
+                }
+
+                @Override
+                public void mouseReleased(MouseEvent e) {
+                    //To change body of implemented methods use File | Settings | File Templates.
+                }
+
+                @Override
+                public void mouseEntered(MouseEvent e) {
+                    //To change body of implemented methods use File | Settings | File Templates.
+                }
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    //To change body of implemented methods use File | Settings | File Templates.
+                }
+            });
         }
 
-
-
         @Override
+
+        //varning för fulhaxx!
         public void graphicChanged() {
+            this.removeAll();
+            if(stackHolder instanceof FinalHolder){
+                List<GameCard> list = stackHolder.stack.list;
+                if(!list.isEmpty()) add(cards.get(list.get(list.size() -1)));
+                this.validate();
+                this.repaint();
+                return;
+            }
+            boolean empty = true;
+            for (GameCard card : stackHolder.stack.list) {
+                empty = false;
+                this.add(cards.get(card));
+            }
+
+            if(empty){
+                JLabel helloimfuckingempty = new JLabel("empty slot");
+                helloimfuckingempty.setBackground(Color.CYAN);
+                helloimfuckingempty.setOpaque(true);
+                this.add(helloimfuckingempty);
+            }
+            this.validate();
+            this.repaint();
             //uppdatera grafiskt
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mousePressed(MouseEvent e) {
-            //To change body of implemented methods use File | Settings | File Templates.
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e) {
-            //To change body of implemented methods use File | Settings | File Templates.
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e) {
-            //To change body of implemented methods use File | Settings | File Templates.
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e) {
-            //To change body of implemented methods use File | Settings | File Templates.
         }
     }
 

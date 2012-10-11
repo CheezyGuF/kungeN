@@ -21,6 +21,11 @@ public abstract class StackHolder{
 
     public abstract CardStack getStack(int amount);
 
+    public void clear(){
+        stack.clear();
+        notifyListeners();
+    }
+
     public boolean isEmpty(){
         return stack.isEmpty();
     }
@@ -37,5 +42,17 @@ public abstract class StackHolder{
 
     public void addListener(GraphicStackListener listener){
         listeners.add(listener);
+    }
+
+    public int cardAmount(GameCard card){
+        return stack.list.size() - stack.list.indexOf(card);
+    }
+
+    public String toString(){
+        StringBuilder result = new StringBuilder();
+        if(this instanceof GameHolder) result.append("a GameHolder ");
+        else if(this instanceof FreeHolder) result.append("a FreeHolder ");
+        else result.append("a FinalHolder ");
+        return result.toString();
     }
 }

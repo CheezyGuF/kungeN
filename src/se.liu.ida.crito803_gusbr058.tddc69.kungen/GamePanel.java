@@ -13,10 +13,49 @@ import java.util.List;
  * Time: 15:46
  * To change this template use File | Settings | File Templates.
  */
-public class GamePanel extends JPanel{
-    public JPanel finalPanel, freePanel, gamePanel;
+public class GamePanel extends JPanel implements GameCompletedListener{
+    public JPanel finalPanel, freePanel, gamePanel, gameCompletedPanel;
     private FreeCell game;
-    private List<Controller> controllers = new LinkedList<Controller>();
+    //private List<Controller> controllers = new LinkedList<Controller>();
+    private Controller controller;
+
+    private HashMap<GameCard, Component> cards = new HashMap<GameCard, Component>();
+    private Collection<Container> stacks = new LinkedList<Container>();
+
+    //lägg till 'representationer' av tex gameHolders genom en Factory i griden;
+
+    public GamePanel(FreeCell game, Controller controller) {
+
+        this.setLayout(new BorderLayout());
+
+        this.game = game;
+        this.controller = controller;
+
+        for (GameCard card : game.gameDeck.list) {
+            cards.put(card, GraphicFactory.toGraphicCard(card, controller));
+        }
+
+        finalPanel = createFinalPanel();
+        freePanel = createFreePanel();
+        gamePanel = createGamePanel();
+        gameCompletedPanel = createGameCompletedPanel();
+        gamePanel.setPreferredSize(new Dimension(getWidth(), 850));
+
+        JPanel northPanel = new JPanel(new GridLayout(1,2));
+        northPanel.setPreferredSize(new Dimension(getWidth(), 200));
+        northPanel.add(freePanel);
+        northPanel.add(finalPanel);
+
+        add(northPanel, BorderLayout.NORTH);
+        add(gamePanel, BorderLayout.CENTER);
+    }
+
+    private JPanel createGameCompletedPanel() {
+        JPanel result = new JPanel();
+        result.add(new JLabel("CONGRATULATIONS!!!"));
+        result.add(new JLabel("YOU WOOONN!!!"));
+        return result;
+    }
 
     private JPanel createFreePanel(){
         JPanel freePanel = new JPanel();
@@ -27,8 +66,9 @@ public class GamePanel extends JPanel{
         Container[] containers = new Container[game.freeHolders.length];
         for (int i = 0; i < game.freeHolders.length; i++) {
             FreeHolder freeHolder = game.freeHolders[i];
-            containers[i] = GraphicFactory.toGraphicHolder(freeHolder);
+            containers[i] = GraphicFactory.toGraphicHolder(freeHolder, cards, controller);
 
+            freeHolder.notifyListeners();
             freePanel.add(containers[i]);
         }
 
@@ -44,8 +84,9 @@ public class GamePanel extends JPanel{
         Container[] containers = new Container[game.finalHolders.length];
         for (int i = 0; i < game.finalHolders.length; i++) {
             FinalHolder finalHolder = game.finalHolders[i];
-            containers[i] = GraphicFactory.toGraphicHolder(finalHolder);
+            containers[i] = GraphicFactory.toGraphicHolder(finalHolder, cards, controller);
 
+            finalHolder.notifyListeners();
             finalPanel.add(containers[i]);
         }
 
@@ -62,52 +103,21 @@ public class GamePanel extends JPanel{
         Container[] containers = new Container[game.gameHolders.length];
         for (int i = 0; i < game.gameHolders.length; i++) {
             GameHolder gameHolder = game.gameHolders[i];
-            containers[i] = GraphicFactory.toGraphicHolder(gameHolder);
+            containers[i] = GraphicFactory.toGraphicHolder(gameHolder, cards, controller);
 
-            Iterator<GameCard> iter = gameHolder.iterator();
-            while(iter.hasNext()) containers[i].add(GraphicFactory.toGraphicCard(iter.next()));//, controllers));
+            gameHolder.notifyListeners();
             gamePanel.add(containers[i]);
         }
 
         return gamePanel;
     }
 
-    //lägg till 'representationer' av tex gameHolders genom en Factory i griden;
-
-
-    public GamePanel(FreeCell game) {
-        this.setLayout(new BorderLayout());
-
-        this.game = game;
-
-        finalPanel = createFinalPanel();
-        freePanel = createFreePanel();
-        gamePanel = createGamePanel();
-
-        gamePanel.setPreferredSize(new Dimension(getWidth(), 850));
-
-        JPanel northPanel = new JPanel(new GridLayout(1,2));
-        northPanel.setPreferredSize(new Dimension(getWidth(), 200));
-        northPanel.add(freePanel);
-        northPanel.add(finalPanel);
-
-        add(northPanel, BorderLayout.NORTH);
-        add(gamePanel, BorderLayout.CENTER);
-    }
-
-    public void registerController(Controller controller){
-        controllers.add(controller);
-    }
-
-    private void notifyControllerOrigin(StackHolder origin, int amount){
-        for (Controller controller : controllers) {
-            controller.setFrom(origin, amount);
-        }
-    }
-
-    private void notifyControllerTarget(StackHolder target){
-        for (Controller controller : controllers) {
-            controller.setTarget(target);
-        }
+    @Override
+    public void gameCompleted() {
+        remove(gamePanel);
+        add(gameCompletedPanel, BorderLayout.CENTER);
+        validate();
+        repaint();
+        System.out.println("VINST!");
     }
 }

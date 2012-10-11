@@ -68,10 +68,9 @@ public class CardStack {
         result.list = list;
         return result;
     }
-    public static CardStack createShuffledDeck(){
-        CardStack result = createCardDeck();
-        Collections.shuffle(result.list);
-        return result;
+
+    public void shuffle(){
+        Collections.shuffle(list);
     }
     public boolean isEmpty() {
         return list.isEmpty();

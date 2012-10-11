@@ -29,6 +29,7 @@ public class FinalHolder extends StackHolder {
         }else{
             GameCard last = stack.peekLast();
             GameCard first = oneCard.peekFirst();
+            System.out.println("putting " + first.toBeautifulString() + " on " + last.toBeautifulString());
             if(last.color.equals(first.color) &&
                last.number.ordinal() == first.number.ordinal() - 1){
                 stack.addStack(oneCard);

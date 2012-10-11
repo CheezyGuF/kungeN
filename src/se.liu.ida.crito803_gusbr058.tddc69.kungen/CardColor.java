@@ -8,7 +8,7 @@ package se.liu.ida.crito803_gusbr058.tddc69.kungen;
  * To change this template use File | Settings | File Templates.
  */
 public enum CardColor {
-    Spades(0),Hearts(1),Clubs(2), Diamonds(3);
+    Spades(0);//,Hearts(1),Clubs(2), Diamonds(3);
 
     CardColor(int index){
     }

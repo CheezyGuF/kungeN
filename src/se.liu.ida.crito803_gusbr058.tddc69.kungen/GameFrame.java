@@ -26,9 +26,10 @@ public class GameFrame extends JFrame {
         setLayout(new BorderLayout());
 
         game = new FreeCell();
-        panel = new GamePanel(game);
         controls = new Controller(game);
-        panel.registerController(controls);
+        panel = new GamePanel(game, controls);
+        game.registerGameCompletedListener(panel);
+        //panel.registerController(controls);
 
         setJMenuBar(menu);
 
@@ -59,13 +60,13 @@ public class GameFrame extends JFrame {
                     int answer = JOptionPane.showConfirmDialog
                             (newGame, "Do you really want to start a new game?", "New game?", JOptionPane.YES_NO_OPTION);
                     if (answer == JOptionPane.YES_OPTION) {
-                        game = new FreeCell();
+                        game.newGame();
                     }
                 }else if(e.getSource() == restartGame){
                     int answer = JOptionPane.showConfirmDialog
                             (restartGame, "Do you really want to restart the game?", "Restart game?", JOptionPane.YES_NO_OPTION);
                     if (answer == JOptionPane.YES_OPTION) {
-                        System.out.println("LOLTROLL THIS IS NOT IMPLEMENTED!");
+                        game.restartGame();
                     }
                 }else if(e.getSource() == exitGame){
                     int answer = JOptionPane.showConfirmDialog
