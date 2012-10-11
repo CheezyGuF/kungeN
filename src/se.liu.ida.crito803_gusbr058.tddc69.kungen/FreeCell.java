@@ -34,11 +34,17 @@ public class FreeCell {
     private void placeCards(){
         int counter = 0;
         CardStack temp;
+        GameCard curr;
         Iterator<GameCard> iter = gameDeck.iterator();
         while(iter.hasNext()){
             temp = new CardStack();
-            temp.list.add(iter.next());
+            curr = iter.next();
+            temp.list.add(curr);
+            System.out.print(curr.toBeautifulString() + "\t");
             gameHolders[counter].addStackNoRules(temp);
+            if(counter >= 7){
+                System.out.println();
+            }
             counter = (counter + 1) % 8;
         }
     }

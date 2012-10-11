@@ -26,6 +26,6 @@ public class GameTester {
                                (card.color.getSuperColor())+ "\n");
         }
         CardStack cs = new CardStack();
-        gf.panel.testArea.setText(builder.toString());
+        //gf.panel.testArea.setText(builder.toString());
     }
 }

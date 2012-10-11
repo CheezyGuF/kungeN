@@ -7,8 +7,8 @@ package se.liu.ida.crito803_gusbr058.tddc69.kungen;
  * Time: 10:44
  * To change this template use File | Settings | File Templates.
  */
-public interface StackListener {
+public interface GraphicStackListener {
 
-    public void stackChanged();
+    public void graphicChanged();
 
 }

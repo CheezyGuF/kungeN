@@ -13,7 +13,7 @@ import java.util.List;
  */
 public abstract class StackHolder{
 
-    List<StackListener> listeners = new ArrayList<StackListener>();
+    List<GraphicStackListener> listeners = new ArrayList<GraphicStackListener>();
 
     CardStack stack = new CardStack();
 
@@ -30,12 +30,12 @@ public abstract class StackHolder{
     }
 
     public void notifyListeners(){
-        for (StackListener stackListener : listeners) {
-            stackListener.stackChanged();
+        for (GraphicStackListener stackListener : listeners) {
+            stackListener.graphicChanged();
         }
     }
 
-    public void addListener(StackListener listener){
+    public void addListener(GraphicStackListener listener){
         listeners.add(listener);
     }
 }

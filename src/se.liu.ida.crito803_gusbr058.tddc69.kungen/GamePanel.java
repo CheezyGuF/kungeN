@@ -13,11 +13,10 @@ import java.util.List;
  * Time: 15:46
  * To change this template use File | Settings | File Templates.
  */
-public class GamePanel extends JPanel implements StackListener {
+public class GamePanel extends JPanel{
     public JPanel finalPanel, freePanel, gamePanel;
-    public JTextArea testArea = new JTextArea();
     private FreeCell game;
-    List<Controller> controllers = new LinkedList<Controller>();
+    private List<Controller> controllers = new LinkedList<Controller>();
 
     private JPanel createFreePanel(){
         JPanel freePanel = new JPanel();
@@ -28,7 +27,7 @@ public class GamePanel extends JPanel implements StackListener {
         Container[] containers = new Container[game.freeHolders.length];
         for (int i = 0; i < game.freeHolders.length; i++) {
             FreeHolder freeHolder = game.freeHolders[i];
-            containers[i] = new GraphicHolder(freeHolder);
+            containers[i] = GraphicFactory.toGraphicHolder(freeHolder);
 
             freePanel.add(containers[i]);
         }
@@ -45,7 +44,7 @@ public class GamePanel extends JPanel implements StackListener {
         Container[] containers = new Container[game.finalHolders.length];
         for (int i = 0; i < game.finalHolders.length; i++) {
             FinalHolder finalHolder = game.finalHolders[i];
-            containers[i] = new GraphicHolder(finalHolder);
+            containers[i] = GraphicFactory.toGraphicHolder(finalHolder);
 
             finalPanel.add(containers[i]);
         }
@@ -63,10 +62,10 @@ public class GamePanel extends JPanel implements StackListener {
         Container[] containers = new Container[game.gameHolders.length];
         for (int i = 0; i < game.gameHolders.length; i++) {
             GameHolder gameHolder = game.gameHolders[i];
-            containers[i] = new GraphicHolder(gameHolder);
+            containers[i] = GraphicFactory.toGraphicHolder(gameHolder);
 
             Iterator<GameCard> iter = gameHolder.iterator();
-            while(iter.hasNext()) containers[i].add(GraphicFactory.toGraphicCard(iter.next()));
+            while(iter.hasNext()) containers[i].add(GraphicFactory.toGraphicCard(iter.next()));//, controllers));
             gamePanel.add(containers[i]);
         }
 
@@ -94,11 +93,6 @@ public class GamePanel extends JPanel implements StackListener {
 
         add(northPanel, BorderLayout.NORTH);
         add(gamePanel, BorderLayout.CENTER);
-    }
-
-    @Override
-    public void stackChanged() {
-
     }
 
     public void registerController(Controller controller){
