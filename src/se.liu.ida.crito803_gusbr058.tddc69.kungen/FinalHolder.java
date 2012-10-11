@@ -17,7 +17,7 @@ public class FinalHolder extends StackHolder {
     private boolean movable; NEJ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     */
 
-    public boolean addStack(CardStack oneCard) {
+    public boolean addStackWithRules(CardStack oneCard) {
         if(oneCard.size() > 1) return false;
         if(stack.isEmpty()){
             if(oneCard.peekFirst().number.equals(CardNumber.A)){

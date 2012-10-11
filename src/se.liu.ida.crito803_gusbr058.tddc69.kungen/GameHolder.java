@@ -12,16 +12,16 @@ import java.util.Iterator;
 public class GameHolder extends StackHolder {
 
      @Override
-    public boolean addStack(CardStack otherStack) {
+    public boolean addStackWithRules(CardStack otherStack) {
         if(stack.isEmpty()){
-            stack.addStack(otherStack);
+            addStackNoRules(otherStack);
             return true;
         }else{
             GameCard last = stack.peekLast();
             GameCard first = otherStack.peekFirst();
             if(last.color.getSuperColor() != first.color.getSuperColor() &&
                last.number.ordinal() == first.number.ordinal() + 1){
-                stack.addStack(otherStack);
+                addStackNoRules(otherStack);
                 return true;
             }
             return false;
@@ -30,21 +30,15 @@ public class GameHolder extends StackHolder {
 
     public void addStackNoRules(CardStack otherStack){
         this.stack.addStack(otherStack);
-    }
-
-    public void addCard(GameCard card){
-        stack.list.add(card);
+        notifyListeners();
     }
 
     @Override
     public CardStack getStack(int amount) {
-        //Ctrl tryck på isStraight!!!!!!!
         if(stack.isStraight(amount)){
             return stack.getStack(amount);
         }else{
             return null;
         }
     }
-
-
 }

@@ -18,7 +18,25 @@ public class GameFrame extends JFrame {
     //ändra public -> private senare?
     public GamePanel panel;
     public FreeCell game;
+    public Controller controls;
     public JMenuBar menu = createMenu();
+
+    public GameFrame() throws HeadlessException {
+        super("Freecell");
+        setLayout(new BorderLayout());
+
+        game = new FreeCell();
+        panel = new GamePanel(game);
+        controls = new Controller(game);
+        panel.registerController(controls);
+
+        setJMenuBar(menu);
+
+        add(panel, BorderLayout.CENTER);
+
+        setSize(1680, 1050);
+        setVisible(true);
+    }
 
     private JMenuBar createMenu() {
 
@@ -65,20 +83,5 @@ public class GameFrame extends JFrame {
         );
 
         return menu;
-    }
-
-    public GameFrame() throws HeadlessException {
-        super("Freecell");
-        this.setLayout(new BorderLayout());
-
-        game = new FreeCell();
-        panel = new GamePanel(game);
-
-        this.setJMenuBar(menu);
-
-        add(panel, BorderLayout.CENTER);
-
-        this.setSize(1680, 1050);
-        this.setVisible(true);
     }
 }

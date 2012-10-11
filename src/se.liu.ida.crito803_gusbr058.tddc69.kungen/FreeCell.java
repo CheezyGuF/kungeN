@@ -1,6 +1,8 @@
 package se.liu.ida.crito803_gusbr058.tddc69.kungen;
 
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -34,7 +36,9 @@ public class FreeCell {
         CardStack temp;
         Iterator<GameCard> iter = gameDeck.iterator();
         while(iter.hasNext()){
-            gameHolders[counter].addCard(iter.next());
+            temp = new CardStack();
+            temp.list.add(iter.next());
+            gameHolders[counter].addStackNoRules(temp);
             counter = (counter + 1) % 8;
         }
     }
@@ -64,8 +68,11 @@ public class FreeCell {
             }
         }
 
-        if(target.addStack(movingStack)){
+        if(target.addStackWithRules(movingStack)){
             CardStack.removeStack(movingStack);
+            //movingStack.clear();
+            origin.notifyListeners();
+            target.notifyListeners();
             return true;
         }else{
             return false;

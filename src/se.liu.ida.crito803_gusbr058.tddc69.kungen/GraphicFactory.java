@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,53 +15,56 @@ import java.awt.event.MouseListener;
  */
 public class GraphicFactory {
 
-    public GraphicFactory() {
-    }
-
-    public static JPanel toGraphicHolder(StackHolder stackHolder){
-        JPanel result = new JPanel();
-        if(stackHolder instanceof GameHolder){
-            result.setLayout(new GridLayout(20,1));
-        }else{
-            result.setLayout(new GridLayout(1, 1));
-        }
-        result.setBackground(new Color(0,167,0));
-        return result;
-    }
-
-
-    //Factory! Denna är coolt!
-    public static JLabel toGraphicCard(GameCard gameCard){
+   //Factory! Denna är coolt!
+    public static JLabel toGraphicCard(final GameCard gameCard, final Controller controller){
         final JLabel result = new JLabel(gameCard.number + " of " + gameCard.color);
         result.setBackground(Color.WHITE);
         result.setForeground(gameCard.color.getSuperColor()==CardColor.superColor.Red? Color.RED:Color.BLACK);
 
         result.setOpaque(true);
         result.setFocusable(true);
-        result.addMouseListener(new MouseListener() {
+        result.addMouseMotionListener(new MouseMotionListener() {
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mouseDragged(MouseEvent e) {
+            }
 
+            @Override
+            public void mouseMoved(MouseEvent e) {
+                //To change body of implemented methods use File | Settings | File Templates.
+            }
+        });
+
+        result.addMouseListener(new MouseListener() {
+            boolean marked = false;
+
+        @Override
+            public void mouseClicked(MouseEvent e) {
+                controller.setFrom(gameCard);
             }
 
             @Override
             public void mousePressed(MouseEvent e) {
-
+                if(marked){
+                    result.setBackground(new Color(0,167,0));
+                    marked = false;
+                }else{
+                    result.setBackground(Color.ORANGE);
+                    marked = true;
+                }
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
-                //To change body of implemented methods use File | Settings | File Templates.
             }
 
             @Override
             public void mouseEntered(MouseEvent e) {
-                result.setBackground(new Color(0,167,0));
+                if(!marked) result.setBackground(new Color(0,167,0));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
-                result.setBackground(Color.WHITE);
+                if(!marked) result.setBackground(Color.WHITE);
             }
         });
         return result;
