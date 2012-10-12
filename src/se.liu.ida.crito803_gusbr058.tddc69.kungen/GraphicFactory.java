@@ -14,16 +14,15 @@ import java.util.List;
  * Time: 13:52
  * To change this template use File | Settings | File Templates.
  */
-public class GraphicFactory {
+public class GraphicFactory implements GraphicControlListener{
 
-    public static JPanel toGraphicHolder(StackHolder stackHolder, HashMap<GameCard, Component> cards, Controller controller){
+    public static Container toGraphicHolder(StackHolder stackHolder, HashMap<GameCard, Component> cards, Controller controller){
         return new GraphicHolder(stackHolder, cards, controller);
     }
 
-    public static JLabel toGraphicCard(GameCard gameCard, Controller controller){
+    public static Component toGraphicCard(GameCard gameCard, Controller controller){
         return new GraphicCard(gameCard, controller);
     }
-
 
     //Factory! Denna är coolt!
     public static class GraphicCard extends JLabel {
@@ -35,7 +34,6 @@ public class GraphicFactory {
             setForeground(gameCard.color.getSuperColor() == CardColor.superColor.Red ? Color.RED : Color.BLACK);
 
             setOpaque(true);
-            setFocusable(true);
 
             addMouseListener(new MouseListener() {
                 @Override
@@ -155,6 +153,11 @@ public class GraphicFactory {
             this.repaint();
             //uppdatera grafiskt
         }
+    }
+
+    @Override
+    public void controlHappening() {
+        //To change body of implemented methods use File | Settings | File Templates.
     }
 
 }

@@ -12,23 +12,18 @@ public class GameHolder extends StackHolder {
      @Override
     public boolean addStackWithRules(CardStack otherStack) {
         if(stack.isEmpty()){
-            addStackNoRules(otherStack);
+            addStack(otherStack);
             return true;
         }else{
             GameCard last = peekLast();
             GameCard first = otherStack.peekFirst();
             if(last.color.getSuperColor() != first.color.getSuperColor() &&
                last.number.ordinal() == first.number.ordinal() + 1){
-                addStackNoRules(otherStack);
+                addStack(otherStack);
                 return true;
             }
             return false;
         }
-    }
-
-    public void addStackNoRules(CardStack otherStack){
-        this.addStack(otherStack);
-        notifyListeners();
     }
 
     @Override

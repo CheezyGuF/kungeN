@@ -89,4 +89,11 @@ public class Controller {
             origin = null;
         }
     }
+
+    public void select(GameCard card){
+
+    }
+    public void select(StackHolder holder){
+
+    }
 }

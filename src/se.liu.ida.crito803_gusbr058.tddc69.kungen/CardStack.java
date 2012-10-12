@@ -22,7 +22,6 @@ public class CardStack implements Iterable{
         GameCard prev = stack.get(index--);
         for (int i = 1; i < amount; i++) {
             GameCard curr = stack.get(index--);
-            //använd equals istället för !=  ?
             if(curr.color.getSuperColor() == prev.color.getSuperColor() ||
                curr.number.ordinal() != prev.number.ordinal() + 1){
                 return false;
@@ -38,16 +37,16 @@ public class CardStack implements Iterable{
         return result;
     }
 
-    public static void removeStack(CardStack subStack){
-        subStack.stack.clear();
-    }
-
     public void clear(){
         stack.clear();
     }
 
     public int size(){
         return stack.size();
+    }
+
+    public boolean contains(GameCard card){
+        return stack.contains(card);
     }
 
     public void addStack(CardStack otherStack){

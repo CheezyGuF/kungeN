@@ -42,11 +42,7 @@ public class FreeCell {
             temp = new CardStack();
             curr = iter.next();
             temp.stack.add(curr);
-            //System.out.print(curr.toBeautifulString() + "\t");
-            gameHolders[counter].addStackNoRules(temp);
-            //if(counter >= 7){
-            //    System.out.println();
-            //}
+            gameHolders[counter].addStack(temp);
             counter = (counter + 1) % 8;
         }
     }
@@ -92,8 +88,7 @@ public class FreeCell {
         }
 
         if(target.addStackWithRules(movingStack)){
-            CardStack.removeStack(movingStack);
-            //movingStack.clear();
+            movingStack.clear();
             origin.notifyListeners();
             target.notifyListeners();
             if(target instanceof FinalHolder) checkIfCompleted();
@@ -115,40 +110,27 @@ public class FreeCell {
     }
 
     private void clearStacks(){
-        for (StackHolder stackHolder : gameHolders) {
-            stackHolder.clear();
-        }
-
-        for (StackHolder stackHolder : freeHolders) {
-            stackHolder.clear();
-        }
-
-        for (StackHolder stackHolder : finalHolders) {
-            stackHolder.clear();
-        }
-
+        for (StackHolder stackHolder : gameHolders)  stackHolder.clear();
+        for (StackHolder stackHolder : freeHolders)  stackHolder.clear();
+        for (StackHolder stackHolder : finalHolders) stackHolder.clear();
     }
 
     public int freeCells(){
         int result = 0;
-        for (int i = 0; i < freeHolders.length; i++) {
-            if(freeHolders[i].isEmpty()) result++;
-        }
+        for (int i = 0; i < freeHolders.length; i++) if(freeHolders[i].isEmpty()) result++;
         return result;
     }
 
     public int freeColumns(){
         int result = 0;
-        for (int i = 0; i < gameHolders.length; i++) {
-            if(gameHolders[i].isEmpty()) result++;
-        }
+        for (int i = 0; i < gameHolders.length; i++) if(gameHolders[i].isEmpty()) result++;
         return result;
     }
 
     public StackHolder findCard(GameCard card){
-        for (StackHolder gameH : gameHolders) if(gameH.stack.contains(card)) return gameH;
-        for (StackHolder finalH : finalHolders) if(finalH.stack.contains(card)) return finalH;
-        for (StackHolder freeH : freeHolders) if(freeH.stack.contains(card)) return freeH;
+        for (StackHolder stackHolder : gameHolders)  if(stackHolder.contains(card)) return stackHolder;
+        for (StackHolder stackHolder : finalHolders) if(stackHolder.contains(card)) return stackHolder;
+        for (StackHolder stackHolder : freeHolders)  if(stackHolder.contains(card)) return stackHolder;
         return null;
     }
 

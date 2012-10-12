@@ -16,7 +16,6 @@ import java.util.List;
 public class GamePanel extends JPanel implements GameCompletedListener{
     private JPanel finalPanel, freePanel, gamePanel, gameCompletedPanel, currentCenterPanel;
     private FreeCell game;
-    //private List<Controller> controllers = new LinkedList<Controller>();
     private Controller controller;
 
     private HashMap<GameCard, Component> cards = new HashMap<GameCard, Component>();
@@ -33,7 +32,7 @@ public class GamePanel extends JPanel implements GameCompletedListener{
 
         for (Object oCard : game.getGameDeck()) {
             GameCard card = (GameCard) oCard;
-            cards.put(card, GraphicFactory.toGraphicCard(card, controller));
+            cards.put(card, GraphicFactory.toGraphicCard(card, this.controller));
         }
 
         finalPanel = createFinalPanel();
@@ -129,4 +128,7 @@ public class GamePanel extends JPanel implements GameCompletedListener{
         validate();
         repaint();
     }
+
+
+
 }
