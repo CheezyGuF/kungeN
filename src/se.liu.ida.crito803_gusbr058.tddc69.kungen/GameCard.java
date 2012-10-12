@@ -20,8 +20,9 @@ public class GameCard {
         this.color = color;
     }
 
-    //Denna del behövs inte längre.
-    public String toBeautifulString(){
+    //Kan få GameCards skrivna som en sträng, om man vill.
+    //Ändra ints till enums i casesatsen.
+    public String toString(){
         StringBuilder result = new StringBuilder();
         int num = this.number.ordinal()+1;
         int col = this.color.ordinal();

@@ -2,7 +2,7 @@ package se.liu.ida.crito803_gusbr058.tddc69.kungen;
 
 import java.util.ArrayList;
 import java.util.List;
-/*
+
 public class CPTESTER {
     public static void main(String[] args) {
         ArrayList<Integer> list1 = new ArrayList<Integer>();
@@ -13,7 +13,7 @@ public class CPTESTER {
         List<Integer> sub =  list1.subList(0, 1);
 
         list2.addAll(sub);
-    /*
+    
         System.out.print("stack 1: ");
         print(list1);
         System.out.print("subl  : ");
@@ -40,4 +40,3 @@ public class CPTESTER {
         System.out.println();
     }
 }
-*/

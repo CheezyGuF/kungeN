@@ -9,9 +9,9 @@ package se.liu.ida.crito803_gusbr058.tddc69.kungen;
  */
 public class GameHolder extends StackHolder {
 
-     @Override
+    @Override
     public boolean addStackWithRules(CardStack otherStack) {
-        if(stack.isEmpty()){
+        if(isEmpty()){
             addStack(otherStack);
             return true;
         }else{

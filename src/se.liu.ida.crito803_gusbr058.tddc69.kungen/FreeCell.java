@@ -16,52 +16,32 @@ public class FreeCell {
     FinalHolder[] finalHolders;
     GameHolder[] gameHolders;
 
-    private CardStack gameDeck;
+    CardStack gameDeck;
 
     Collection<GameCompletedListener> completedListeners;
 
     //själva spelet
     public FreeCell() {
         completedListeners = new LinkedList<GameCompletedListener>();
-        freeHolders = new FreeHolder[4];
+        freeHolders  = new FreeHolder[4];
         finalHolders = new FinalHolder[4];
-        gameHolders = new GameHolder[8];
-        for (int i = 0; i < freeHolders.length; i++) freeHolders[i] = new FreeHolder();
+        gameHolders  = new GameHolder[8];
+        for (int i = 0; i < freeHolders.length; i++)  freeHolders[i]  = new FreeHolder();
         for (int i = 0; i < finalHolders.length; i++) finalHolders[i] = new FinalHolder();
-        for (int i = 0; i < gameHolders.length; i++) gameHolders[i] = new GameHolder();
+        for (int i = 0; i < gameHolders.length; i++)  gameHolders[i]  = new GameHolder();
         gameDeck = CardStack.createCardDeck();
         newGame();
     }
 
-    private void placeCards(){
-        int counter = 0;
-        CardStack temp;
-        GameCard curr;
-        Iterator<GameCard> iter = gameDeck.iterator();
-        while(iter.hasNext()){
-            temp = new CardStack();
-            curr = iter.next();
-            temp.stack.add(curr);
-            gameHolders[counter].addStack(temp);
-            counter = (counter + 1) % 8;
-        }
+    public CardStack getGameDeck(){
+        return gameDeck;
     }
-
-    public void checkIfCompleted(){
-        if(!allEmpty()) return;
-        notifyGameCompletedListeners();
+    public StackHolder findCard(GameCard card){
+        for (StackHolder stackHolder : gameHolders)  if(stackHolder.contains(card)) return stackHolder;
+        for (StackHolder stackHolder : finalHolders) if(stackHolder.contains(card)) return stackHolder;
+        for (StackHolder stackHolder : freeHolders)  if(stackHolder.contains(card)) return stackHolder;
+        return null;
     }
-
-    private boolean allEmpty(){
-        for (StackHolder stackHolder : gameHolders) {
-            if(!stackHolder.isEmpty()) return false;
-        }
-        for (StackHolder stackHolder : freeHolders) {
-            if(!stackHolder.isEmpty()) return false;
-        }
-        return true;
-    }
-
     public boolean move(int amount, StackHolder origin, StackHolder target){
         //REGLER!!!
         //Kontroll på hur många kort som ska läggas in! lediga rutor mm
@@ -70,12 +50,12 @@ public class FreeCell {
         if(movingStack == null) return false;
 
         if(origin instanceof GameHolder && target instanceof GameHolder){
-            int length = movingStack.stack.size();
+            int length = movingStack.size();
             int freeCells = freeCells();
             int freeColumns = freeColumns();
 
             if(target.isEmpty()){
-              freeColumns--;
+                freeColumns--;
             }
 
             //(fC + 1) * 2^Cols är funktionen för att räkna ut antalet tillåtna kort att flytta.
@@ -97,53 +77,54 @@ public class FreeCell {
             return false;
         }
     }
-
+    public void checkIfCompleted(){
+        if(!allEmpty()) return;
+        notifyGameCompletedListeners();
+    }
     public void newGame(){
         clearStacks();
         gameDeck.shuffle();
         placeCards();
     }
-
     public void restartGame(){
         clearStacks();
         placeCards();
     }
+    public void addGameCompletedListener(GameCompletedListener listener){
+        completedListeners.add(listener);
+    }
 
+    private boolean allEmpty(){
+        for (StackHolder stackHolder : gameHolders) if(!stackHolder.isEmpty()) return false;
+        for (StackHolder stackHolder : freeHolders) if(!stackHolder.isEmpty()) return false;
+        return true;
+    }
+    private int freeCells(){
+        int result = 0;
+        for (int i = 0; i < freeHolders.length; i++) if(freeHolders[i].isEmpty()) result++;
+        return result;
+    }
+    private int freeColumns(){
+        int result = 0;
+        for (int i = 0; i < gameHolders.length; i++) if(gameHolders[i].isEmpty()) result++;
+        return result;
+    }
     private void clearStacks(){
         for (StackHolder stackHolder : gameHolders)  stackHolder.clear();
         for (StackHolder stackHolder : freeHolders)  stackHolder.clear();
         for (StackHolder stackHolder : finalHolders) stackHolder.clear();
     }
-
-    public int freeCells(){
-        int result = 0;
-        for (int i = 0; i < freeHolders.length; i++) if(freeHolders[i].isEmpty()) result++;
-        return result;
+    private void placeCards(){
+        int counter = 0;
+        for (GameCard card : gameDeck) {
+            gameHolders[counter].addCard(card);
+            counter = (counter + 1) % 8;
+        }
+        for (StackHolder stackHolder : gameHolders) stackHolder.notifyListeners();
     }
-
-    public int freeColumns(){
-        int result = 0;
-        for (int i = 0; i < gameHolders.length; i++) if(gameHolders[i].isEmpty()) result++;
-        return result;
-    }
-
-    public StackHolder findCard(GameCard card){
-        for (StackHolder stackHolder : gameHolders)  if(stackHolder.contains(card)) return stackHolder;
-        for (StackHolder stackHolder : finalHolders) if(stackHolder.contains(card)) return stackHolder;
-        for (StackHolder stackHolder : freeHolders)  if(stackHolder.contains(card)) return stackHolder;
-        return null;
-    }
-
     private void notifyGameCompletedListeners() {
         for (GameCompletedListener listener : completedListeners) {
             listener.gameCompleted();
         }
-    }
-    public void registerGameCompletedListener(GameCompletedListener listener){
-        completedListeners.add(listener);
-    }
-
-    public CardStack getGameDeck(){
-        return gameDeck;
     }
 }

@@ -18,16 +18,13 @@ public class FreeHolder extends StackHolder {
 
     @Override
     public boolean addStackWithRules(CardStack otherStack) {
-        if(stack.size() == 1 || otherStack.size() > 1) return false;
+        if(size() == 1 || otherStack.size() > 1) return false;
         addStack(otherStack);
         return true;
-        }
+    }
 
     @Override
     public CardStack getStackWithRules(int amount) {
         return getStack(1);
     }
-
-
-
 }

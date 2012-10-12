@@ -9,7 +9,7 @@ import java.util.LinkedList;
  * Time: 17:56
  * To change this template use File | Settings | File Templates.
  */
-public class GameTester {
+public class Game {
     public static void main(String[] args) {
         GameFrame frame = new GameFrame();
 

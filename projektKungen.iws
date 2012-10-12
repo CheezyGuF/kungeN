@@ -18,6 +18,9 @@
     <rightPanel />
     <splitter proportion="0.5" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/projektKungen$Game.coverage" NAME="Game Coverage Results" MODIFIED="1350048796450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -65,62 +68,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GamePanel.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GamePanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="29" selection-start="559" selection-end="559" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GraphicStackListener.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GraphicStackListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="17" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FreeCell.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FreeCell.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="129" column="0" selection-start="3920" selection-end="3920" vertical-scroll-proportion="1.8393162">
-              <folding>
-                <element signature="method#newGame#0;class#FreeCell#0" expanded="false" />
-                <element signature="method#restartGame#0;class#FreeCell#0" expanded="false" />
-                <element signature="method#clearStacks#0;class#FreeCell#0" expanded="false" />
-                <element signature="method#freeCells#0;class#FreeCell#0" expanded="false" />
-                <element signature="method#freeColumns#0;class#FreeCell#0" expanded="false" />
-                <element signature="method#findCard#0;class#FreeCell#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CardStack.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/CardStack.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="36" selection-start="1306" selection-end="1306" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Controller.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="13" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameHolder.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameHolder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="0" selection-start="797" selection-end="797" vertical-scroll-proportion="0.0">
+            <state line="13" column="31" selection-start="322" selection-end="322" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -129,8 +80,48 @@
       <file leaf-file-name="GraphicFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GraphicFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="13" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0">
+            <state line="16" column="61" selection-start="394" selection-end="427" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GamePanel.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GamePanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="105" column="0" selection-start="3567" selection-end="3567" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="method#gameCompleted#0;class#GamePanel#0" expanded="false" />
+                <element signature="method#fixPanels#0;class#GamePanel#0" expanded="false" />
+                <element signature="method#createFreePanel#0;class#GamePanel#0" expanded="false" />
+                <element signature="method#createFinalPanel#0;class#GamePanel#0" expanded="false" />
+                <element signature="method#createGamePanel#0;class#GamePanel#0" expanded="false" />
+                <element signature="method#createGameCompletedPanel#0;class#GamePanel#0" expanded="false" />
+                <element signature="method#changeCenterPanel#0;class#GamePanel#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FreeCell.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FreeCell.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="79" column="23" selection-start="2782" selection-end="2782" vertical-scroll-proportion="1.0427351">
+              <folding>
+                <element signature="method#getGameDeck#0;class#FreeCell#0" expanded="false" />
+                <element signature="method#findCard#0;class#FreeCell#0" expanded="false" />
+                <element signature="method#move#0;class#FreeCell#0" expanded="false" />
+                <element signature="method#checkIfCompleted#0;class#FreeCell#0" expanded="false" />
+                <element signature="method#newGame#0;class#FreeCell#0" expanded="false" />
+                <element signature="method#restartGame#0;class#FreeCell#0" expanded="false" />
+                <element signature="method#addGameCompletedListener#0;class#FreeCell#0" expanded="false" />
+                <element signature="method#allEmpty#0;class#FreeCell#0" expanded="false" />
+                <element signature="method#freeCells#0;class#FreeCell#0" expanded="false" />
+                <element signature="method#freeColumns#0;class#FreeCell#0" expanded="false" />
+                <element signature="method#clearStacks#0;class#FreeCell#0" expanded="false" />
+                <element signature="method#placeCards#0;class#FreeCell#0" expanded="false" />
+                <element signature="method#notifyGameCompletedListeners#0;class#FreeCell#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -138,17 +129,15 @@
       <file leaf-file-name="StackHolder.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/StackHolder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="48" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FinalHolder.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FinalHolder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="1271" selection-end="1377" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="16" column="14" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="method#isEmpty#0;class#StackHolder#0" expanded="false" />
+                <element signature="method#cardAmount#0;class#StackHolder#0" expanded="false" />
+                <element signature="method#clear#0;class#StackHolder#0" expanded="false" />
+                <element signature="method#notifyListeners#0;class#StackHolder#0" expanded="false" />
+                <element signature="method#addListener#0;class#StackHolder#0" expanded="false" />
+                <element signature="method#toString#0;class#StackHolder#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -166,21 +155,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameCard.java" />
-        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameTester.java" />
-        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/CPTESTER.java" />
-        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FinalHolder.java" />
-        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FreeHolder.java" />
-        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/StackHolder.java" />
-        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/CardNumber.java" />
-        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameFrame.java" />
         <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/CardColor.java" />
         <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GraphicControlListener.java" />
-        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GamePanel.java" />
         <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GraphicFactory.java" />
         <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/Controller.java" />
-        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameHolder.java" />
+        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/TESTER2.java" />
         <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/CardStack.java" />
+        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FinalHolder.java" />
+        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FreeHolder.java" />
+        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameCard.java" />
+        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameHolder.java" />
+        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameFrame.java" />
+        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GamePanel.java" />
+        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameTester.java" />
+        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/Game.java" />
+        <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/StackHolder.java" />
         <option value="$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FreeCell.java" />
       </list>
     </option>
@@ -234,6 +223,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="projektKungen" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Problems">
           <PATH>
@@ -296,16 +295,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="projektKungen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -323,11 +312,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
-  <component name="RunManager" selected="Application.GameTester">
+  <component name="RunManager" selected="Application.Game">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -348,6 +337,24 @@
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -377,24 +384,6 @@
       <envs />
       <properties />
       <listeners />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -448,9 +437,9 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="false" name="GameTester" type="Application" factoryName="Application">
+    <configuration default="false" name="Game" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="se.liu.ida.crito803_gusbr058.tddc69.kungen.GameTester" />
+      <option name="MAIN_CLASS_NAME" value="se.liu.ida.crito803_gusbr058.tddc69.kungen.Game" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -461,12 +450,14 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="projektKungen" />
       <envs />
+      <RunnerSettings RunnerId="Cover" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="" />
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Cover" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
@@ -495,7 +486,7 @@
       <method />
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.GameTester" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Game" />
       <item index="1" class="java.lang.String" itemvalue="Application.CPTESTER" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -539,12 +530,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="0" width="1932" height="1052" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="631" y="190" width="803" height="853" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.49785408" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32555556" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -553,19 +546,18 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32863274" sideWeight="0.67356324" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32666665" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977018" sideWeight="0.6" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1383547" sideWeight="0.21666667" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39974457" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1373597" sideWeight="0.68" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="631" y="190" width="803" height="853" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959914" sideWeight="0.67777777" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -662,121 +654,167 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GraphicControlListener.java">
+    <entry file="jar:///usr/jdk/jdk1.7.0_07/src.zip!/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="257" selection-end="292" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="373" selection-end="373" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GamePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="29" selection-start="559" selection-end="559" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GraphicStackListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FreeHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="223" selection-end="223" vertical-scroll-proportion="0.17525773">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="797" selection-end="797" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameTester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="253" selection-end="253" vertical-scroll-proportion="0.23247863">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GraphicFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0">
+        <state line="434" column="6" selection-start="19325" selection-end="19325" vertical-scroll-proportion="0.50769234">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FinalHolder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1271" selection-end="1377" vertical-scroll-proportion="0.0">
+        <state line="9" column="13" selection-start="223" selection-end="223" vertical-scroll-proportion="0.26153848">
+          <folding>
+            <element signature="method#addStackWithRules#0;class#FinalHolder#0" expanded="false" />
+            <element signature="method#getStackWithRules#0;class#FinalHolder#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FreeHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="435" selection-end="435" vertical-scroll-proportion="0.52307695">
+          <folding>
+            <element signature="method#addStackWithRules#0;class#FreeHolder#0" expanded="false" />
+            <element signature="method#getStackWithRules#0;class#FreeHolder#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GraphicStackListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="17" selection-start="227" selection-end="227" vertical-scroll-proportion="0.17525773">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameCompletedListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="17" selection-start="227" selection-end="227" vertical-scroll-proportion="0.17525773">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/CPTESTER.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="8" selection-start="243" selection-end="243" vertical-scroll-proportion="0.2319688">
+          <folding>
+            <element signature="e#283#292#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="485" selection-end="485" vertical-scroll-proportion="0.31965813">
+        <state line="13" column="13" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/CardNumber.java">
+    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameHolder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="12" selection-start="222" selection-end="222" vertical-scroll-proportion="0.26153848">
-          <folding />
+        <state line="10" column="0" selection-start="256" selection-end="256" vertical-scroll-proportion="0.2905983">
+          <folding>
+            <element signature="method#addStackWithRules#0;class#GameHolder#0" expanded="false" />
+            <element signature="method#getStackWithRules#0;class#GameHolder#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/StackHolder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="48" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="16" column="14" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="method#isEmpty#0;class#StackHolder#0" expanded="false" />
+            <element signature="method#cardAmount#0;class#StackHolder#0" expanded="false" />
+            <element signature="method#clear#0;class#StackHolder#0" expanded="false" />
+            <element signature="method#notifyListeners#0;class#StackHolder#0" expanded="false" />
+            <element signature="method#addListener#0;class#StackHolder#0" expanded="false" />
+            <element signature="method#toString#0;class#StackHolder#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/jdk/jdk1.7.0_07/src.zip!/java/lang/Enum.java">
+    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GameFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="27" selection-start="4374" selection-end="4386" vertical-scroll-proportion="0.36239317">
+        <state line="62" column="34" selection-start="1932" selection-end="1932" vertical-scroll-proportion="0.6978558">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/CardStack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="36" selection-start="1306" selection-end="1306" vertical-scroll-proportion="0.0">
+        <state line="17" column="0" selection-start="439" selection-end="439" vertical-scroll-proportion="0.38011697">
+          <folding>
+            <element signature="e#337#347#0" expanded="true" />
+            <element signature="method#peekLast#0;class#CardStack#0" expanded="false" />
+            <element signature="method#peekFirst#0;class#CardStack#0" expanded="false" />
+            <element signature="method#iterator#0;class#CardStack#0" expanded="false" />
+            <element signature="method#contains#0;class#CardStack#0" expanded="false" />
+            <element signature="method#isEmpty#0;class#CardStack#0" expanded="false" />
+            <element signature="method#size#0;class#CardStack#0" expanded="false" />
+            <element signature="method#createCardDeck#0;class#CardStack#0" expanded="false" />
+            <element signature="method#clear#0;class#CardStack#0" expanded="false" />
+            <element signature="method#addStack#0;class#CardStack#0" expanded="false" />
+            <element signature="method#addCard#0;class#CardStack#0" expanded="false" />
+            <element signature="method#shuffle#0;class#CardStack#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="10" selection-start="359" selection-end="359" vertical-scroll-proportion="0.23781677">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GraphicFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="61" selection-start="394" selection-end="427" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="31" selection-start="322" selection-end="322" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/GamePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="0" selection-start="3567" selection-end="3567" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="method#gameCompleted#0;class#GamePanel#0" expanded="false" />
+            <element signature="method#fixPanels#0;class#GamePanel#0" expanded="false" />
+            <element signature="method#createFreePanel#0;class#GamePanel#0" expanded="false" />
+            <element signature="method#createFinalPanel#0;class#GamePanel#0" expanded="false" />
+            <element signature="method#createGamePanel#0;class#GamePanel#0" expanded="false" />
+            <element signature="method#createGameCompletedPanel#0;class#GamePanel#0" expanded="false" />
+            <element signature="method#changeCenterPanel#0;class#GamePanel#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/se.liu.ida.crito803_gusbr058.tddc69.kungen/FreeCell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="0" selection-start="3920" selection-end="3920" vertical-scroll-proportion="1.8393162">
+        <state line="79" column="23" selection-start="2782" selection-end="2782" vertical-scroll-proportion="1.0427351">
           <folding>
+            <element signature="method#getGameDeck#0;class#FreeCell#0" expanded="false" />
+            <element signature="method#findCard#0;class#FreeCell#0" expanded="false" />
+            <element signature="method#move#0;class#FreeCell#0" expanded="false" />
+            <element signature="method#checkIfCompleted#0;class#FreeCell#0" expanded="false" />
             <element signature="method#newGame#0;class#FreeCell#0" expanded="false" />
             <element signature="method#restartGame#0;class#FreeCell#0" expanded="false" />
-            <element signature="method#clearStacks#0;class#FreeCell#0" expanded="false" />
+            <element signature="method#addGameCompletedListener#0;class#FreeCell#0" expanded="false" />
+            <element signature="method#allEmpty#0;class#FreeCell#0" expanded="false" />
             <element signature="method#freeCells#0;class#FreeCell#0" expanded="false" />
             <element signature="method#freeColumns#0;class#FreeCell#0" expanded="false" />
-            <element signature="method#findCard#0;class#FreeCell#0" expanded="false" />
+            <element signature="method#clearStacks#0;class#FreeCell#0" expanded="false" />
+            <element signature="method#placeCards#0;class#FreeCell#0" expanded="false" />
+            <element signature="method#notifyGameCompletedListeners#0;class#FreeCell#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -12,12 +12,12 @@ public class FinalHolder extends StackHolder {
     private boolean stackable; Ja
     private boolean alternatingColor; Nej
     private boolean increasingOrder; Ja, Ess - Kung
-    private boolean movable; NEJ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    private boolean movable; Nej
     */
 
     public boolean addStackWithRules(CardStack oneCard) {
         if(oneCard.size() > 1) return false;
-        if(stack.isEmpty()){
+        if(isEmpty()){
             if(oneCard.peekFirst().number.equals(CardNumber.A)){
                 addStack(oneCard);
                 return true;
@@ -27,7 +27,7 @@ public class FinalHolder extends StackHolder {
         }else{
             GameCard last = peekLast();
             GameCard first = oneCard.peekFirst();
-            System.out.println("putting " + first.toBeautifulString() + " on " + last.toBeautifulString());
+            //System.out.println("putting " + first.toString() + " on " + last.toString());
             if(last.color.equals(first.color) &&
                last.number.ordinal() == first.number.ordinal() - 1){
                 addStack(oneCard);
@@ -42,6 +42,4 @@ public class FinalHolder extends StackHolder {
     public CardStack getStackWithRules(int amount) {
         return null;
     }
-
-
 }

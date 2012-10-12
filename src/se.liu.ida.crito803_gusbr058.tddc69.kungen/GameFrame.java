@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,11 +14,11 @@ import java.awt.event.WindowEvent;
  */
 public class GameFrame extends JFrame {
 
-    //ändra public -> private senare?
-    public GamePanel panel;
-    public FreeCell game;
-    public Controller controls;
-    public JMenuBar menu = createMenu();
+    //Kan läggas i konstruktorn.
+    private Controller controls;
+    private FreeCell game;
+    private GamePanel panel;
+    private JMenuBar menu = createMenu();
 
     public GameFrame() throws HeadlessException {
         super("Freecell");
@@ -28,7 +27,7 @@ public class GameFrame extends JFrame {
         game = new FreeCell();
         controls = new Controller(game);
         panel = new GamePanel(game, controls);
-        game.registerGameCompletedListener(panel);
+        game.addGameCompletedListener(panel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         setJMenuBar(menu);
@@ -42,9 +41,10 @@ public class GameFrame extends JFrame {
     private JMenuBar createMenu() {
 
         JMenu file = new JMenu("File");
-        final JMenuItem newGame = new JMenuItem("New Game");
+        final JMenuItem newGame     = new JMenuItem("New Game");
         final JMenuItem restartGame = new JMenuItem("Restart Game");
-        final JMenuItem exitGame = new JMenuItem("Exit Game");
+        final JMenuItem exitGame    = new JMenuItem("Exit Game");
+
         file.add(newGame);
         file.add(restartGame);
         file.addSeparator();

@@ -1,6 +1,7 @@
 package se.liu.ida.crito803_gusbr058.tddc69.kungen;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
@@ -13,37 +14,30 @@ import java.util.List;
  */
 public abstract class StackHolder extends CardStack{
 
-    List<GraphicStackListener> listeners = new ArrayList<GraphicStackListener>();
-
-    //CardStack stack = new CardStack();
-
-    public abstract boolean addStackWithRules(CardStack newStack);
+    Collection<GraphicStackListener> listeners = new ArrayList<GraphicStackListener>();
 
     public abstract CardStack getStackWithRules(int amount);
 
-    public void clear(){
-        stack.clear();
-        notifyListeners();
-    }
+    public abstract boolean addStackWithRules(CardStack newStack);
 
     public boolean isEmpty(){
         return stack.isEmpty();
     }
-
-    public void notifyListeners(){
-        for (GraphicStackListener stackListener : listeners) {
-            stackListener.graphicChanged();
-        }
+    public int cardAmount(GameCard card){
+        return size() - stack.indexOf(card);
     }
-
+    public void clear(){
+        stack.clear();
+        notifyListeners();
+    }
+    public void notifyListeners(){
+        for (GraphicStackListener stackListener : listeners) stackListener.graphicChanged();
+    }
     public void addListener(GraphicStackListener listener){
         listeners.add(listener);
     }
 
-    public int cardAmount(GameCard card){
-        return stack.size() - stack.indexOf(card);
-    }
-
+    //Tillfällig
     public String toString(){
         StringBuilder result = new StringBuilder();
         if(this instanceof GameHolder) result.append("a GameHolder ");
