@@ -14,7 +14,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class GamePanel extends JPanel implements GameCompletedListener{
-    public JPanel finalPanel, freePanel, gamePanel, gameCompletedPanel;
+    private JPanel finalPanel, freePanel, gamePanel, gameCompletedPanel, currentCenterPanel;
     private FreeCell game;
     //private List<Controller> controllers = new LinkedList<Controller>();
     private Controller controller;
@@ -31,7 +31,8 @@ public class GamePanel extends JPanel implements GameCompletedListener{
         this.game = game;
         this.controller = controller;
 
-        for (GameCard card : game.gameDeck.list) {
+        for (Object oCard : game.getGameDeck()) {
+            GameCard card = (GameCard) oCard;
             cards.put(card, GraphicFactory.toGraphicCard(card, controller));
         }
 
@@ -47,7 +48,8 @@ public class GamePanel extends JPanel implements GameCompletedListener{
         northPanel.add(finalPanel);
 
         add(northPanel, BorderLayout.NORTH);
-        add(gamePanel, BorderLayout.CENTER);
+        currentCenterPanel = gamePanel;
+        add(currentCenterPanel, BorderLayout.CENTER);
     }
 
     private JPanel createGameCompletedPanel() {
@@ -99,7 +101,6 @@ public class GamePanel extends JPanel implements GameCompletedListener{
         gamePanel.setBackground(Color.YELLOW);
 
         //Jiddra med fabriker och så
-
         Container[] containers = new Container[game.gameHolders.length];
         for (int i = 0; i < game.gameHolders.length; i++) {
             GameHolder gameHolder = game.gameHolders[i];
@@ -114,10 +115,18 @@ public class GamePanel extends JPanel implements GameCompletedListener{
 
     @Override
     public void gameCompleted() {
-        remove(gamePanel);
-        add(gameCompletedPanel, BorderLayout.CENTER);
+        changeCenterPanel(gameCompletedPanel);
+    }
+
+    public void fixPanels(){
+        changeCenterPanel(gamePanel);
+    }
+
+    private void changeCenterPanel(JPanel curr){
+        remove(currentCenterPanel);
+        currentCenterPanel = curr;
+        add(currentCenterPanel, BorderLayout.CENTER);
         validate();
         repaint();
-        System.out.println("VINST!");
     }
 }

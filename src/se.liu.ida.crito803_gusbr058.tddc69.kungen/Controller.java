@@ -19,19 +19,20 @@ public class Controller {
         this.game = game;
     }
 
+    public void setTo(GameCard card){
+        setTarget(game.findCard(card));
+    }
+
     public void setFrom(StackHolder origin, int amount) {
         this.origin = origin;
         this.amount = amount;
     }
 
-    public void setTo(GameCard card){
-        setTarget(game.findCard(card));
-    }
-
     public void setFrom(GameCard card){
         if(origin != null && target == null) setTo(card);
 
-/*utkommenterad pga "icke OO". designbeslut iom delegering till FreeCell
+/*
+    utkommenterad pga "icke OO". designbeslut iom delegering till FreeCell
         StackHolder result = null;
         int amount = 0;
         for (StackHolder sh : game.freeHolders) {
@@ -57,6 +58,7 @@ public class Controller {
             }
         }
 */
+
         StackHolder result = game.findCard(card);
         amount = result.cardAmount(card);
         setFrom(result, amount);
@@ -87,5 +89,4 @@ public class Controller {
             origin = null;
         }
     }
-
 }

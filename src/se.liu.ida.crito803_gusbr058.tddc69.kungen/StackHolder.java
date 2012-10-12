@@ -11,15 +11,15 @@ import java.util.List;
  * Time: 19:08
  * To change this template use File | Settings | File Templates.
  */
-public abstract class StackHolder{
+public abstract class StackHolder extends CardStack{
 
     List<GraphicStackListener> listeners = new ArrayList<GraphicStackListener>();
 
-    CardStack stack = new CardStack();
+    //CardStack stack = new CardStack();
 
     public abstract boolean addStackWithRules(CardStack newStack);
 
-    public abstract CardStack getStack(int amount);
+    public abstract CardStack getStackWithRules(int amount);
 
     public void clear(){
         stack.clear();
@@ -28,10 +28,6 @@ public abstract class StackHolder{
 
     public boolean isEmpty(){
         return stack.isEmpty();
-    }
-
-    public Iterator iterator(){
-        return stack.iterator();
     }
 
     public void notifyListeners(){
@@ -45,7 +41,7 @@ public abstract class StackHolder{
     }
 
     public int cardAmount(GameCard card){
-        return stack.list.size() - stack.list.indexOf(card);
+        return stack.size() - stack.indexOf(card);
     }
 
     public String toString(){

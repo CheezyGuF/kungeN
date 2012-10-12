@@ -3,7 +3,6 @@ package se.liu.ida.crito803_gusbr058.tddc69.kungen;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,7 +16,7 @@ public class FreeCell {
     FinalHolder[] finalHolders;
     GameHolder[] gameHolders;
 
-    CardStack gameDeck;
+    private CardStack gameDeck;
 
     Collection<GameCompletedListener> completedListeners;
 
@@ -42,7 +41,7 @@ public class FreeCell {
         while(iter.hasNext()){
             temp = new CardStack();
             curr = iter.next();
-            temp.list.add(curr);
+            temp.stack.add(curr);
             //System.out.print(curr.toBeautifulString() + "\t");
             gameHolders[counter].addStackNoRules(temp);
             //if(counter >= 7){
@@ -71,11 +70,11 @@ public class FreeCell {
         //REGLER!!!
         //Kontroll på hur många kort som ska läggas in! lediga rutor mm
 
-        CardStack movingStack = origin.getStack(amount);
+        CardStack movingStack = origin.getStackWithRules(amount);
         if(movingStack == null) return false;
 
         if(origin instanceof GameHolder && target instanceof GameHolder){
-            int length = movingStack.list.size();
+            int length = movingStack.stack.size();
             int freeCells = freeCells();
             int freeColumns = freeColumns();
 
@@ -147,9 +146,9 @@ public class FreeCell {
     }
 
     public StackHolder findCard(GameCard card){
-        for (StackHolder gameH : gameHolders) if(gameH.stack.list.contains(card)) return gameH;
-        for (StackHolder finalH : finalHolders) if(finalH.stack.list.contains(card)) return finalH;
-        for (StackHolder freeH : freeHolders) if(freeH.stack.list.contains(card)) return freeH;
+        for (StackHolder gameH : gameHolders) if(gameH.stack.contains(card)) return gameH;
+        for (StackHolder finalH : finalHolders) if(finalH.stack.contains(card)) return finalH;
+        for (StackHolder freeH : freeHolders) if(freeH.stack.contains(card)) return freeH;
         return null;
     }
 
@@ -160,5 +159,9 @@ public class FreeCell {
     }
     public void registerGameCompletedListener(GameCompletedListener listener){
         completedListeners.add(listener);
+    }
+
+    public CardStack getGameDeck(){
+        return gameDeck;
     }
 }

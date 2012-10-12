@@ -1,7 +1,5 @@
 package se.liu.ida.crito803_gusbr058.tddc69.kungen;
 
-import java.util.Iterator;
-
 /**
  * Created with IntelliJ IDEA.
  * User: crito803
@@ -21,13 +19,13 @@ public class FreeHolder extends StackHolder {
     @Override
     public boolean addStackWithRules(CardStack otherStack) {
         if(stack.size() == 1 || otherStack.size() > 1) return false;
-        stack.addStack(otherStack);
+        addStack(otherStack);
         return true;
         }
 
     @Override
-    public CardStack getStack(int amount) {
-        return stack.getStack(1);
+    public CardStack getStackWithRules(int amount) {
+        return getStack(1);
     }
 
 

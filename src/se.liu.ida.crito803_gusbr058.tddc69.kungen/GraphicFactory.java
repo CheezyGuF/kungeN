@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
 import java.util.*;
 import java.util.List;
 
@@ -48,7 +47,7 @@ public class GraphicFactory {
                 @Override
                 public void mousePressed(MouseEvent e) {
                     if (marked) {
-                        setBackground(new Color(0, 167, 0));
+                        setBackground(Color.WHITE);
                         marked = false;
                     } else {
                         if (e.getButton() == MouseEvent.BUTTON1) {
@@ -56,7 +55,6 @@ public class GraphicFactory {
                         } else {
                             setBackground(Color.YELLOW);
                         }
-
                         marked = true;
                     }
                 }
@@ -66,6 +64,7 @@ public class GraphicFactory {
                 }
 
                 @Override
+                //Ta bort ändringen av färg!
                 public void mouseEntered(MouseEvent e) {
                     if (!marked) setBackground(new Color(0, 167, 0));
                 }
@@ -97,11 +96,11 @@ public class GraphicFactory {
             }
             setBackground(new Color(0,167,0));
             stackHolder.addListener(this);
+
             addMouseListener(new MouseListener() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
                     controller.setTarget(stackHolder);
-
                     System.out.println("target: " + controller.getTarget());
                 }
 
@@ -122,30 +121,31 @@ public class GraphicFactory {
 
                 @Override
                 public void mouseExited(MouseEvent e) {
-                    //To change body of implemented methods use File | Settings | File Templates.
+
                 }
             });
         }
 
         @Override
-
         //varning för fulhaxx!
         public void graphicChanged() {
             this.removeAll();
             if(stackHolder instanceof FinalHolder){
-                List<GameCard> list = stackHolder.stack.list;
+                List<GameCard> list = stackHolder.stack;
                 if(!list.isEmpty()) add(cards.get(list.get(list.size() -1)));
                 this.validate();
                 this.repaint();
                 return;
             }
             boolean empty = true;
-            for (GameCard card : stackHolder.stack.list) {
+            for (Object card : stackHolder) {
                 empty = false;
-                this.add(cards.get(card));
+                this.add(cards.get((GameCard) card));
             }
 
             if(empty){
+                //Visa tom bild!
+
                 JLabel helloimfuckingempty = new JLabel("empty slot");
                 helloimfuckingempty.setBackground(Color.CYAN);
                 helloimfuckingempty.setOpaque(true);

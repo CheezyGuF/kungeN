@@ -12,18 +12,16 @@ import java.util.List;
  * Time: 18:05
  * To change this template use File | Settings | File Templates.
  */
-public class CardStack {
+public class CardStack implements Iterable{
 
-    //Public tills vidare.
-    //ArrayList -> List vid compile error?
-    public List<GameCard> list = new ArrayList<GameCard>();
+    protected List<GameCard> stack = new ArrayList<GameCard>();
 
     public boolean isStraight(int amount){
         if(amount == 1) return true;
-        int index = list.size() - 1;
-        GameCard prev = list.get(index--);
+        int index = stack.size() - 1;
+        GameCard prev = stack.get(index--);
         for (int i = 1; i < amount; i++) {
-            GameCard curr = list.get(index--);
+            GameCard curr = stack.get(index--);
             //använd equals istället för !=  ?
             if(curr.color.getSuperColor() == prev.color.getSuperColor() ||
                curr.number.ordinal() != prev.number.ordinal() + 1){
@@ -36,24 +34,24 @@ public class CardStack {
 
     public CardStack getStack(int amount){
         CardStack result = new CardStack();
-        result.list = list.subList(size() - amount, size());
+        result.stack = stack.subList(size() - amount, size());
         return result;
     }
 
     public static void removeStack(CardStack subStack){
-        subStack.list.clear();
+        subStack.stack.clear();
     }
 
     public void clear(){
-        list.clear();
+        stack.clear();
     }
 
     public int size(){
-        return list.size();
+        return stack.size();
     }
 
     public void addStack(CardStack otherStack){
-        list.addAll(otherStack.list);
+        stack.addAll(otherStack.stack);
     }
 
     public static CardStack createCardDeck(){
@@ -65,29 +63,29 @@ public class CardStack {
             }
         }
         CardStack result = new CardStack();
-        result.list = list;
+        result.stack = list;
         return result;
     }
 
     public void shuffle(){
-        Collections.shuffle(list);
+        Collections.shuffle(stack);
     }
     public boolean isEmpty() {
-        return list.isEmpty();
+        return stack.isEmpty();
     }
 
 
     public GameCard peekLast() {
-        if(list.size() == 0) return null;
-        return list.get(list.size()-1);
+        if(stack.size() == 0) return null;
+        return stack.get(stack.size()-1);
     }
 
     public GameCard peekFirst() {
-        if(list.size() == 0) return null;
-        return list.get(0);
+        if(stack.size() == 0) return null;
+        return stack.get(0);
     }
 
-    public Iterator iterator(){
-        return list.iterator();
+    public Iterator<GameCard> iterator(){
+        return stack.iterator();
     }
 }

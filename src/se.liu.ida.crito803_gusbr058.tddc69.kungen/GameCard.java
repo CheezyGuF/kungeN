@@ -20,6 +20,7 @@ public class GameCard {
         this.color = color;
     }
 
+    //Denna del behövs inte längre.
     public String toBeautifulString(){
         StringBuilder result = new StringBuilder();
         int num = this.number.ordinal()+1;

@@ -29,7 +29,7 @@ public class GameFrame extends JFrame {
         controls = new Controller(game);
         panel = new GamePanel(game, controls);
         game.registerGameCompletedListener(panel);
-        //panel.registerController(controls);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         setJMenuBar(menu);
 
@@ -61,12 +61,14 @@ public class GameFrame extends JFrame {
                             (newGame, "Do you really want to start a new game?", "New game?", JOptionPane.YES_NO_OPTION);
                     if (answer == JOptionPane.YES_OPTION) {
                         game.newGame();
+                        panel.fixPanels();
                     }
                 }else if(e.getSource() == restartGame){
                     int answer = JOptionPane.showConfirmDialog
                             (restartGame, "Do you really want to restart the game?", "Restart game?", JOptionPane.YES_NO_OPTION);
                     if (answer == JOptionPane.YES_OPTION) {
                         game.restartGame();
+                        panel.fixPanels();
                     }
                 }else if(e.getSource() == exitGame){
                     int answer = JOptionPane.showConfirmDialog

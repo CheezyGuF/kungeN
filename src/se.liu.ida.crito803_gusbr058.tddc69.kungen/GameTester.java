@@ -12,20 +12,21 @@ import java.util.LinkedList;
 public class GameTester {
     public static void main(String[] args) {
         GameFrame frame = new GameFrame();
-        if(1==1) return;
 
-        CardStack list = CardStack.createShuffledDeck();
+        /*
+        CardStack stack = CardStack.createCardDeck();
 
 
         GameFrame gf = new GameFrame();
         StringBuilder builder = new StringBuilder();
 
         int index = 1;
-        for (GameCard card : list.list) {
+        for (GameCard card : stack.stack) {
             builder.append((index<10?" ":"")+ (index++)+ ": " + card.color.toString() + "\t" + card.number.toString() + "\t" +
                                (card.color.getSuperColor())+ "\n");
         }
         CardStack cs = new CardStack();
         //gf.panel.testArea.setText(builder.toString());
+        */
     }
 }

@@ -1,7 +1,5 @@
 package se.liu.ida.crito803_gusbr058.tddc69.kungen;
 
-import java.util.Iterator;
-
 /**
  * Created with IntelliJ IDEA.
  * User: crito803
@@ -21,18 +19,18 @@ public class FinalHolder extends StackHolder {
         if(oneCard.size() > 1) return false;
         if(stack.isEmpty()){
             if(oneCard.peekFirst().number.equals(CardNumber.A)){
-                stack.addStack(oneCard);
+                addStack(oneCard);
                 return true;
             }else{
                 return false;
             }
         }else{
-            GameCard last = stack.peekLast();
+            GameCard last = peekLast();
             GameCard first = oneCard.peekFirst();
             System.out.println("putting " + first.toBeautifulString() + " on " + last.toBeautifulString());
             if(last.color.equals(first.color) &&
                last.number.ordinal() == first.number.ordinal() - 1){
-                stack.addStack(oneCard);
+                addStack(oneCard);
                 return true;
             }else{
                 return false;
@@ -41,7 +39,7 @@ public class FinalHolder extends StackHolder {
     }
 
     //Den här behövs inte!
-    public CardStack getStack(int amount) {
+    public CardStack getStackWithRules(int amount) {
         return null;
     }
 
