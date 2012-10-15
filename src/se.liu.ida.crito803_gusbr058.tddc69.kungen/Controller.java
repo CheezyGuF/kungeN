@@ -1,99 +1,100 @@
 package se.liu.ida.crito803_gusbr058.tddc69.kungen;
 
-import java.util.Iterator;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.LinkedList;
 
-/**
- * Created with IntelliJ IDEA.
- * User: gusbr058
- * Date: 2012-10-09
- * Time: 13:08
- * To change this template use File | Settings | File Templates.
- */
 public class Controller {
     private FreeCell game;
     private StackHolder origin;
     private StackHolder target;
     private int amount;
+    
+    HashMap<GameCard, Collection<MarkListener>> markListeners = new HashMap<GameCard, Collection<MarkListener>>();
 
     public Controller(FreeCell game) {
         this.game = game;
-    }
-
-    public void setTo(GameCard card){
-        setTarget(game.findCard(card));
-    }
-
-    public void setFrom(StackHolder origin, int amount) {
-        this.origin = origin;
-        this.amount = amount;
-    }
-
-    public void setFrom(GameCard card){
-        if(origin != null && target == null) setTo(card);
-
-/*
-    utkommenterad pga "icke OO". designbeslut iom delegering till FreeCell
-        StackHolder result = null;
-        int amount = 0;
-        for (StackHolder sh : game.freeHolders) {
-            Iterator iter = sh.iterator();
-            int currAmount = 0;
-            while(iter.hasNext()){
-                currAmount++;
-                if(iter.next().equals(card)){
-                    result = sh;
-                    amount = currAmount;
-                }
-            }
-        }
-        for (StackHolder sh : game.gameHolders) {
-            Iterator iter = sh.iterator();
-            int currAmount = 0;
-            while(iter.hasNext()){
-                currAmount++;
-                if(iter.next().equals(card)){
-                    result = sh;
-                    amount = currAmount;
-                }
-            }
-        }
-*/
-
-        StackHolder result = game.findCard(card);
-        amount = result.cardAmount(card);
-        setFrom(result, amount);
+        origin = null;
+        target = null;
+        amount = 0;
     }
 
     public StackHolder getOrigin() {
         return origin;
     }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setTarget(StackHolder target) {
-        this.target = target;
-        executeCommand();
-    }
-
     public StackHolder getTarget() {
         return target;
     }
 
-    private void executeCommand(){
-        if(target != null && origin != null && amount > 0){
-            game.move(amount, origin, target);
-            amount = 0;
-            target = null;
-            origin = null;
+    public int getAmount() {
+        return amount;
+    }
+    public void select(GameCard card){
+        StackHolder holder = game.findCard(card);
+        if(origin == null || origin == holder){
+            notifyMarkListeners(origin, false);
+            amount = holder.cardAmount(card);
+            if(!holder.isStraight(amount)){
+                origin = null;
+                amount = 0;
+            }else{
+                origin = holder;
+                notifyMarkListeners(origin.getStack(amount), true);
+            }
+        }else{
+            target = holder;
+            if(!attemptExecution()){
+                select(card);
+            }
+        }
+    }
+    public void select(StackHolder holder){
+        if(origin != null){
+            target = holder;
+            attemptExecution();
+        }
+    }
+    public void addMarkListener(GameCard card, MarkListener listener){
+        Collection cardListeners = markListeners.get(card);
+        if(cardListeners == null){
+            cardListeners = new LinkedList<MarkListener>();
+            cardListeners.add(listener);
+            markListeners.put(card, cardListeners);
+        }else{
+            cardListeners.add(listener);
         }
     }
 
-    public void select(GameCard card){
-
+    private boolean attemptExecution(){
+        boolean didMove = false;
+        if(target != null && origin != null && amount > 0){
+            didMove = game.move(amount, origin, target);
+            if(didMove){
+                notifyMarkListeners(target, false);
+            }else{
+                notifyMarkListeners(origin, false);
+            }
+            amount = 0;
+            origin = null;
+            target = null;
+        }
+        return didMove;
     }
-    public void select(StackHolder holder){
-
+    private void notifyMarkListeners(CardStack stack, boolean marked){
+        if(stack == null)return;
+        for (GameCard card : stack) {
+            notifyMarkListeners(card, marked);
+        }
+    }
+    private void notifyMarkListeners(GameCard card, boolean marked){
+        Collection<MarkListener> listeners = markListeners.get(card);
+        if(listeners == null) return;
+        for (MarkListener markListener : listeners) {
+            if(marked){
+                markListener.onMark();
+            }else{
+                markListener.onUnmark();
+            }
+        }
     }
 }

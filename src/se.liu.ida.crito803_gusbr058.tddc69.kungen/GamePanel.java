@@ -1,18 +1,10 @@
 package se.liu.ida.crito803_gusbr058.tddc69.kungen;
 
-import javax.swing.*;
-import javax.swing.text.html.HTMLDocument;
 import java.awt.*;
-import java.util.*;
-import java.util.List;
+import java.util.HashMap;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
-/**
- * Created with IntelliJ IDEA.
- * User: crito803
- * Date: 2012-09-26
- * Time: 15:46
- * To change this template use File | Settings | File Templates.
- */
 public class GamePanel extends JPanel implements GameCompletedListener{
     private Controller controller;
     private FreeCell game;
@@ -97,9 +89,28 @@ public class GamePanel extends JPanel implements GameCompletedListener{
         return gamePanel;
     }
     private JPanel createGameCompletedPanel() {
-        JPanel result = new JPanel();
+        final JPanel result = new JPanel();
         result.add(new JLabel("CONGRATULATIONS!!!"));
         result.add(new JLabel("YOU WOOONN!!!"));
+//        final Collection<LittleCircleWithNiceColors> circles = new LinkedList<LittleCircleWithNiceColors>();
+//        for (int i = 0; i < 100; i++) {
+//            circles.add(new LittleCircleWithNiceColors((int)(Math.random()*getWidth())));
+//        }
+//
+//        javax.swing.Timer ticker = new Timer(100, new AWTEventMulticasterc);
+//        TimerTask timerTask = new TimerTask() {
+//
+//            @Override
+//            public void run() {
+//                for (LittleCircleWithNiceColors c : circles) {
+//                    c.tick();
+//                    c.paint(getGraphics());
+//                }
+//            }
+//        };
+//        Timer timer = new Timer();
+//        timer.schedule(timerTask, 100);
+
         return result;
     }
 
@@ -109,5 +120,26 @@ public class GamePanel extends JPanel implements GameCompletedListener{
         add(currentCenterPanel, BorderLayout.CENTER);
         validate();
         repaint();
+    }
+}
+
+class LittleCircleWithNiceColors{
+    int x, y = 0;
+    double acceleration = 0.982;
+    double speed = 0;
+
+    public LittleCircleWithNiceColors(int x) {
+        this.x = x;
+    }
+
+    public void tick(){
+        y += speed;
+        speed += acceleration;
+    }
+
+    public void paint(Graphics g){
+        g.setColor(new Color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255)));
+        g.fillOval(x,y, 25, 25);
+
     }
 }

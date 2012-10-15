@@ -1,16 +1,8 @@
 package se.liu.ida.crito803_gusbr058.tddc69.kungen;
 
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.LinkedList;
 
-/**
- * Created with IntelliJ IDEA.
- * User: crito803
- * Date: 2012-09-26
- * Time: 15:55
- * To change this template use File | Settings | File Templates.
- */
 public class FreeCell {
     FreeHolder[] freeHolders;
     FinalHolder[] finalHolders;

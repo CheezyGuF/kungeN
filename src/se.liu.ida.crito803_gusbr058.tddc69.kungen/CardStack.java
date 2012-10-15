@@ -2,19 +2,16 @@ package se.liu.ida.crito803_gusbr058.tddc69.kungen;
 
 import java.util.*;
 
-/**
- * Created with IntelliJ IDEA.
- * User: crito803
- * Date: 2012-09-20
- * Time: 18:05
- * To change this template use File | Settings | File Templates.
- */
 public class CardStack implements Iterable<GameCard> {
 
-    protected List<GameCard> stack = new ArrayList<GameCard>();
+    protected List<GameCard> stack = new LinkedList<GameCard>();
 
     public CardStack getStack(int amount){
         CardStack result = new CardStack();
+        assert(amount >= 0);
+        assert(size() >= 0);
+        assert(amount <= size());
+        
         result.stack = stack.subList(size() - amount, size());
         return result;
     }
@@ -29,18 +26,24 @@ public class CardStack implements Iterable<GameCard> {
     public Iterator<GameCard> iterator(){
         return stack.iterator();
     }
+    public Iterator<GameCard> descendingIterator(){
+        return ((LinkedList)stack).descendingIterator();
+    }
 
     public boolean isStraight(int amount){
+        if(amount > size()) return false;
         if(amount == 1) return true;
-        int index = size() - 1;
-        GameCard prev = stack.get(index--);
-        for (int i = 1; i < amount; i++) {
-            GameCard curr = stack.get(index--);
+        
+        Iterator<GameCard> iter = descendingIterator();
+        GameCard curr = iter.next();
+        GameCard prev;
+        while(--amount > 0){
+            prev = curr;
+            curr = iter.next();
             if(curr.color.getSuperColor() == prev.color.getSuperColor() ||
                curr.number.ordinal() != prev.number.ordinal() + 1){
                return false;
             }
-            prev = curr;
         }
         return true;
     }

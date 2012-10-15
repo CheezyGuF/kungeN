@@ -5,13 +5,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * Created with IntelliJ IDEA.
- * User: crito803
- * Date: 2012-09-25
- * Time: 10:41
- * To change this template use File | Settings | File Templates.
- */
 public class GameFrame extends JFrame {
 
     //Kan läggas i konstruktorn.
@@ -34,13 +27,15 @@ public class GameFrame extends JFrame {
 
         add(panel, BorderLayout.CENTER);
 
-        setSize(1680, 1050);
+        setSize(800, 600);
         setVisible(true);
     }
 
     private JMenuBar createMenu() {
 
         JMenu file = new JMenu("File");
+        JMenu about = new JMenu("About");
+        final JMenuItem aboutGame = new JMenuItem("About Game");
         final JMenuItem newGame     = new JMenuItem("New Game");
         final JMenuItem restartGame = new JMenuItem("Restart Game");
         final JMenuItem exitGame    = new JMenuItem("Exit Game");
@@ -49,9 +44,11 @@ public class GameFrame extends JFrame {
         file.add(restartGame);
         file.addSeparator();
         file.add(exitGame);
+        about.add(aboutGame);
 
         JMenuBar menu = new JMenuBar();
         menu.add(file);
+        menu.add(about);
 
         final ActionListener MenuListener = new ActionListener() {
             @Override
@@ -76,15 +73,33 @@ public class GameFrame extends JFrame {
                     if (answer == JOptionPane.YES_OPTION) {
                         System.exit(0);
                     }
+                }else if(e.getSource() == aboutGame){
+                    JOptionPane.showMessageDialog(aboutGame,
+                             "Kungen av Cristian Torrusio, Gustaf Brunberg.\n" +
+                                    "\n" +
+                                    "Vad går spelet ut på?\n" +
+                                    "- Spelet går ut på att flytta alla kort ifrån spelplanen (där korten börjar) till de fyra (4) rutorna uppe till höger.\n" +
+                                    "\n" +
+                                    "Hur gör man?\n" +
+                                    "- Man ska få korten uppe till höger i ordningen Ess till Kung, för att lyckas med detta så får man arbeta sig igenom högarna\t\n" +
+                                    "  på spelplanen. Kort på spelplanen får endast staplas i stegar (eller som enskilda kort), stegarna byggs ihop av valör men\n" +
+                                    "  måste skilja i färg mellan varje valör. Stegarna ska staplas ifrån Kung till Ess.\n" +
+                                    "\n" +
+                                    "- Rutorna uppe till vänster används som avlastningsrutor och kan göra att man kan flytta flera kort samtidigt.\n" +
+                                    "\n" +
+                                    "När vinner man?\n" +
+                                    "- När man fått alla kort upp till de fyra (4) rutorna uppe till höger.", "About the game", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
         };
 
         newGame.addActionListener(MenuListener);
         restartGame.addActionListener(MenuListener);
-        exitGame.addActionListener(MenuListener
-        );
+        exitGame.addActionListener(MenuListener);
+        aboutGame.addActionListener(MenuListener);
 
         return menu;
     }
 }
+
+
